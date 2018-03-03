@@ -48,6 +48,15 @@ class App extends Component {
       this.checkLogin()
     })
   }
+
+  userDidAdd = (userData) => {
+    console.log(userData)
+    axios.post("/api/add", userData).then((res) => {
+      console.log(res)
+      this.checkLogin()
+    })
+  }
+
   userDidSignup = (userData) => {
     console.log(userData)
     axios.post("/api/signUp", userData).then((res) => {
