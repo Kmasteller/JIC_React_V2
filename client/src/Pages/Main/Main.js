@@ -28,21 +28,21 @@ const Main = (props) => {
                 </div>
               </div>
               <div className="card-action">
-                <p className="black-text text-darken-4">YOU<a href="profile.html"><i className="material-icons right">more_horiz</i></a></p>
+                <p className="black-text text-darken-4">YOU<Link to="profile.html" /><i className="material-icons right">more_horiz</i></p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="fixed-action-btn toolbar ">
-          <a className="btn-floating pulse btn-large red">
+          <Link className="btn-floating pulse btn-large red" />
             <i className="large material-icons">menu</i>
-          </a>
+          
           <ul>
-            <li className="waves-effect waves-light"><a href="main"><i className="material-icons">home</i></a></li>
-            <li className="waves-effect waves-light"><a href="addother.html"><i className="material-icons">add</i></a></li>
-            <li className="waves-effect waves-light"><a href="resources.html"><i className="material-icons">format_list_bulleted</i></a></li>
-            <li className="waves-effect waves-light"><a href="tour"><i className="material-icons">play_arrow</i></a></li>
+            <li className="waves-effect waves-light"><Link to="main" /><i className="material-icons">home</i></li>
+            <li className="waves-effect waves-light"><Link to="addother.html" /><i className="material-icons">add</i></li>
+            <li className="waves-effect waves-light"><Link to="resources.html" /><i className="material-icons">format_list_bulleted</i></li>
+            <li className="waves-effect waves-light"><Link to="tour" /><i className="material-icons">play_arrow</i></li>
           </ul>
         </div>
       </div>
