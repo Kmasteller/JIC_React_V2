@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Just In Case
+=======
+# Just In Case v.2 React
+>>>>>>> 123605b2baede4419de267b840d4a525a14e033d
 
 ## *** You never know when you'll need it ***
 
@@ -19,6 +23,7 @@ The app is to help people just in case of an emergency.  It acts a wallet for es
 It can also be used as a way to ensure you always have your information with you, whether you are visiting the doctor or the ER.  It will also give you the capability to take a picture of your children and insurance information, just in case.  The app will occasionally prompt you to update your information to ensure it stays current and relevant.  Furthermore, we will eventually add an upload option giving you the option to store files such as fingerprints, living wills, DNRs, etc.  We would also like to use encryption such as SSL or another means to ultimately secure the data and keep it safe.  You know why?  Just in case!
 
 ### © 2018 Just in Case
+<<<<<<< HEAD
 
 
 ## Starting the app locally
@@ -56,3 +61,5 @@ yarn build
 3. Push to Heroku
 
 If all previous steps were followed correctly, your application should be deployed to Heroku!
+=======
+>>>>>>> 123605b2baede4419de267b840d4a525a14e033d
