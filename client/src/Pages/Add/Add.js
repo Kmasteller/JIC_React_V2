@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Input from '../../components/Input';
 import {Button, Icon} from 'react-materialize';
+import FooterMenu from '../../components/Footer-menu';
+import Menu from '../../components/Menu';
 
 class Add extends Component {
   
@@ -230,6 +232,8 @@ class Add extends Component {
               {/* <button className="waves-effect red btn" id="submit-profile" type="submit" name="action"><i className="material-icons left">save</i>Save</button> */}
             </div>
           </div>
+          <Menu />
+          <FooterMenu />
           {/* end of submit button */}
           {/* Menu */}
           {/* <div class="fixed-action-btn toolbar ">
