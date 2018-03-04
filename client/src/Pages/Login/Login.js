@@ -13,7 +13,9 @@ class Login extends Component {
         [name]: value
       });
     }
-
+     componentWillMount () {
+      console.log(this.props, "this is props")
+    }
 
   render() {
     return (

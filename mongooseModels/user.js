@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create the noteSchema with the schema object
-var userSchema = new Schema({
+var addSchema = new Schema({
 
   // date is just a string
   username: {
@@ -33,10 +33,42 @@ var userSchema = new Schema({
     type: Boolean,
     default: false
   },
+  photo: {
+    type: String,
+    required: false
+  },
+  birthdate: {
+    type: String,
+    required: false
+  },
+  address: {
+    type: String,
+    required: false
+  },
+  phone: {
+    type: String,
+    required: false
+  },
+  height: {
+    type: String,
+    required: false
+  },
+  weight: {
+    type: String,
+    required: false
+  },
+  hair: {
+    type: String,
+    required: false
+  },
+  eyes: {
+    type: String,
+    required: false
+  },
 });
 
-// Create the Note model using the noteSchema
-var User = mongoose.model("User", userSchema);
+// Create the Add model using the addSchema
+var Add = mongoose.model("Add", addSchema);
 
-// Export the User model
-module.exports = User;
+// Export the Add model
+module.exports = Add;
