@@ -78,9 +78,11 @@ class Add extends Component {
                       <span>
                         <i className="material-icons">photo_camera</i>
                       </span>
-                      <input id="photo" type="file" accept="image/*" />
+                      <Input name="photo" type="file" value={this.state.photo} onChange={this.handleChange} />
+                      {/* <input id="photo" type="file" accept="image/*" /> */}
                     </div>
                     <div className="file-path-wrapper">
+                    
                       <input className="file-path validate" type="text" />
                     </div>
                   </div>
@@ -100,7 +102,10 @@ class Add extends Component {
                   <p>When were you born?</p>
                   <br />
                   <br />
-                    <Input name="birthdate" placeholder="01/01/1900" value={this.state.birthdate} className="datepicker" onChange={this.handleChange} />
+
+                    {/* <Input name='on' type='date' onChange={function (e, value) { }} /> */}
+
+                    <Input name="birthdate" type='date' placeholder="01/01/1900" value={this.state.birthdate} className="datepicker" onChange={this.handleChange} />
                   {/* <input type="text" id="birthdate" className="datepicker" /> */}
                 </div>
               </div>
