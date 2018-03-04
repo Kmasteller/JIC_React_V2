@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {Carousel} from "react-materialize";
-import {Dropdown, Button} from 'react-materialize';
+// import {Dropdown, Button} from 'react-materialize';
 
 const Tour = (props) => {
   console.log(props)
