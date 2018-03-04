@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import Input from '../../components/Input';
+import {Button, Icon} from 'react-materialize';
 
 class Add extends Component {
-  state = {
-    photo: "",
-    birthdate: "",
-    address: "",
-    phone: "",
-    height: "",
-    weight: "",
-    hair: "",
-    eyes: ""
+  
+  constructor(props){
+    super(props)
+
+      this.state = {
+      photo: "",
+      birthdate: "",
+      address: "",
+      phone: "",
+      height: "",
+      weight: "",
+      hair: "",
+      eyes: ""
+    }
   }
+
+ componentWillMount () {
+   console.log(this.props, "this is props")
+ }
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -19,7 +29,12 @@ class Add extends Component {
       [name]: value
     });
   }
-
+//   userDidAdd = (userData) => {
+//   console.log(userData)
+//   // axios.post("/api/add", userData).then((res) => {
+//   //   console.log(res)
+//   // })
+// }
 
   render() {
     return (
@@ -31,7 +46,7 @@ class Add extends Component {
         <button onClick={() => this.props.handleLogin(this.state)}>Login</button>
       </div> */}
 
-      <form className id="profile" name="profile" method="POST" action="/profile">
+      <form className id="profile" name="profile" >
         {/* Your content here */}
         <div>
           {/* Modal Structure */}
@@ -204,7 +219,9 @@ class Add extends Component {
           {/* submit button */}
           <div className="row center">
             <div className="col s12">
-              <button className="waves-effect red btn" onClick={() => this.props.handleLogin(this.state)}><i className="material-icons left">save</i>Save</button>
+              {/* <button onClick={() => this.props.handleAdd(this.state)}>Login</button> */}
+              <Button waves-effect className='red' waves='light' onClick={() => this.props.handleAdd(this.state)}>Save<Icon right>save</Icon></Button>
+              {/* <button className="waves-effect red btn" onClick={() => this.props.handleAdd(this.state)}><i className="material-icons left">save</i>Save</button> */}
               {/* <button className="waves-effect red btn" id="submit-profile" type="submit" name="action"><i className="material-icons left">save</i>Save</button> */}
             </div>
           </div>

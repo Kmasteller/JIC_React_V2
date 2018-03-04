@@ -15,7 +15,15 @@ class Profile extends Component {
           name: '',
           username: '',
           email: '',
-          profilePic: null
+          profilePic: null,
+          // photo: '',
+          // birthdate: '',
+          // address: '',
+          // phone: '',
+          // height: '',
+          // weight: '',
+          // hair: '',
+          // eyes: ''
         }
       }
     }
@@ -68,3 +76,23 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+// render() {
+//   return (
+//     <div>
+//       <div className="card" style={this.cardStyle}>
+//         <img className="card-img-top" src={this.state.tempUser.profilePic} alt="" />
+//         <div className="card-body">
+//           <h5 className="card-title">{this.state.tempUser.username}</h5>
+//           <p className="card-text">Your Users Comments</p>
+//           {this.state.user.currentUser.username === this.state.tempUser.username &&
+//             <Link
+//               to={`/user/${this.props.match.params.username}/update`}
+//               className="btn btn-primary">Update</Link>}
+//           <Route path="/user/:username/update" component={Update} />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+// }
