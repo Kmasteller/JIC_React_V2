@@ -49,13 +49,13 @@ class App extends Component {
     })
   }
 
-  userDidAdd = (userData) => {
-    console.log(userData)
-    axios.post("/api/add", userData).then((res) => {
-      console.log(res)
-      this.checkLogin()
-    })
-  }
+    userDidAdd = (userData) => {
+          console.log(userData)
+          axios.post("/api/add", userData).then((res) => {
+            console.log(res)
+            this.checkLogin()
+          })
+        }
 
   userDidSignup = (userData) => {
     console.log(userData)
@@ -105,6 +105,9 @@ class App extends Component {
             )} />
             <Route exact path="/login" render={() => (
               <Login handleLogin={this.userDidLogin} />
+            )} />
+            <Route exact path="/add" render={(props) => (
+              <Add {...props} handleAdd={this.userDidAdd} />
             )} />
             <Route exact path="/signup" render={() => (
               <Signup handleSignup={this.userDidSignup} />

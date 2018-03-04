@@ -122,6 +122,29 @@ module.exports = function (app) {
       res.json(userObj)
     })
   });
+//   //update profile route
+//   app.put('/api/update/:username', function (req, res, next) {
+//     req.session.user.currentUser = req.body
+//     var loggedUser = req.session.user.currentUser;
+//     if (true) {
+//       User.update({
+//         username: loggedUser.username,
+//         name: loggedUser.name,
+//         email: loggedUser.email,
+//         profilePic: loggedUser.profilePic
+//       }, {
+//           where: {
+//             username: req.params.username
+//           }
+//         }).then(function (UserData) {
+//           res.json(UserData)
+//         })
+//     } else {
+//       res.status(404).json("please log in to update profile")
+//     }
+//   });
+// }
+
   //update profile route
   app.put('/api/update/:username', function (req, res, next) {
     req.session.user.currentUser = req.body
@@ -131,7 +154,15 @@ module.exports = function (app) {
         username: loggedUser.username,
         name: loggedUser.name,
         email: loggedUser.email,
-        profilePic: loggedUser.profilePic
+        profilePic: loggedUser.profilePic,
+        photo: UserData.photo,
+        birthdate: UserData.birthdate,
+        address: UserData.address,
+        phone: UserData.phone,
+        height: UserData.height,
+        weight: UserData.weight,
+        hair: UserData.hair,
+        eyes: UserData.eyes
       }, {
           where: {
             username: req.params.username

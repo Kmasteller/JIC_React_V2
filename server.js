@@ -57,7 +57,7 @@ app.get("*", function (req, res) {
 
 
 
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/users';
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/jic';
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
