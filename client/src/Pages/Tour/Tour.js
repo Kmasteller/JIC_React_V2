@@ -43,6 +43,29 @@ const Tour = (props) => {
 
     </Carousel>
 
+      {/* Carousel Option 2 */}
+      {/* <Carousel images={[
+
+      '../../../assets/images/tour/ob1.png',
+
+      '../../../assets/images/tour/ob2.png',
+
+      '../../../assets/images/tour/ob3.png',
+
+      '../../../assets/images/tour/ob4.png',
+
+      '../../../assets/images/tour/ob5.png',
+
+      '../../../assets/images/tour/ob6.png',
+
+      '../../../assets/images/tour/ob7.png',
+
+      '../../../assets/images/tour/ob8.png',
+
+      '../../../assets/images/tour/ob9.png'
+
+      ]} /> */}
+
     
       
       <div className="fixed-action-btn toolbar">

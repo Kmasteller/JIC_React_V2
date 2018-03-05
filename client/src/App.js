@@ -9,6 +9,7 @@ import Profile from "./Pages/Profile";
 import Tour from "./Pages/Tour";
 import Add from "./Pages/Add";
 import Main from "./Pages/Main";
+import Resource from "./Pages/Resource";
 import axios from 'axios';
 import './App.css';
 
@@ -83,7 +84,7 @@ class App extends Component {
             <Route exact path="/add" component={Add} />
             <Route exact path="/main" component={Main} />
             <Route exact path="/addother" component={Main} />
-            <Route exact path="/resources" component={Main} />
+            <Route exact path="/resource" component={Resource} />
             <Route path="/user/:username" render={(props) => {
                return <Profile {...props} />
             }} />

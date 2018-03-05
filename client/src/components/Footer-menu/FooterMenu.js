@@ -12,10 +12,10 @@ const FooterMenu = () =>
     <NavItem href='tour'><Icon>play_arrow</Icon></NavItem>
   </Navbar>
 
-{/* <div className="fixed-action-btn toolbar ">
-            {/* <Link className="btn-floating pulse btn-large red">
-            <i className="large material-icons">menu</i>
-            </Link> */}
+// {/* <div className="fixed-action-btn toolbar ">
+//             {/* <Link className="btn-floating pulse btn-large red">
+//             <i className="large material-icons">menu</i>
+//             </Link> */}
 
     // <Button waves-effect className='btn-floating pulse btn-large red' waves='light' onClick={() => this.props.handleAdd(this.state)}><Icon right>menu</Icon></Button>
     //         <ul>
