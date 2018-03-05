@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {Carousel} from "react-materialize";
-import {Dropdown, Button} from 'react-materialize';
+// import {Dropdown, Button} from 'react-materialize';
 
 const Tour = (props) => {
   console.log(props)
@@ -42,6 +42,29 @@ const Tour = (props) => {
       </div>
 
     </Carousel>
+
+      {/* Carousel Option 2 */}
+      {/* <Carousel images={[
+
+      '../../../assets/images/tour/ob1.png',
+
+      '../../../assets/images/tour/ob2.png',
+
+      '../../../assets/images/tour/ob3.png',
+
+      '../../../assets/images/tour/ob4.png',
+
+      '../../../assets/images/tour/ob5.png',
+
+      '../../../assets/images/tour/ob6.png',
+
+      '../../../assets/images/tour/ob7.png',
+
+      '../../../assets/images/tour/ob8.png',
+
+      '../../../assets/images/tour/ob9.png'
+
+      ]} /> */}
 
     
       
