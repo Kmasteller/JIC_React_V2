@@ -9,7 +9,7 @@ class Menu extends Component {
   render() {
     return (
 <div className="fixed-action-btn toolbar">
-        <Button waves-effect className='btn-floating pulse btn-large red' waves='light' onClick={() => this.setState({ display: false })}><Icon right>menu</Icon></Button>
+        <Button className='btn-floating pulse btn-large red' waves='light' onClick={() => this.setState({ display: false })}><Icon right>menu</Icon></Button>
 
   </div>
     );
