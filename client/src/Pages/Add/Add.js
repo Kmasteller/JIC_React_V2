@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import Input from '../../components/Input';
 import { Link } from "react-router-dom";
-import {Button, Icon} from 'react-materialize';
-import FooterMenu from '../../components/Footer-menu';
+// import {Button, Icon} from 'react-materialize';
+// import FooterMenu from '../../components/Footer-menu';
 import Menu from '../../components/Menu';
-import { Button, CardTitle, Card , Icon, Col, Input } from 'react-materialize';
+import { Button, CardTitle, Card , Col } from 'react-materialize';
 
 class Add extends Component {
   
