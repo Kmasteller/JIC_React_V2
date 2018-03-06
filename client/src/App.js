@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
@@ -9,6 +9,7 @@ import Profile from "./Pages/Profile";
 import Tour from "./Pages/Tour";
 import Add from "./Pages/Add";
 import Main from "./Pages/Main";
+import Resource from "./Pages/Resource";
 import axios from 'axios';
 import './App.css';
 
@@ -76,14 +77,14 @@ class App extends Component {
     return (
        <Router>
         <div>
-          <Nav userInfo={this.state.user} logout={this.userLogOut}/>
+          {/* <Nav userInfo={this.state.user} logout={this.userLogOut}/> */}
           <Switch>  
             <Route exact path="/" component={Home}/>
             <Route exact path="/tour" component={Tour} />
             <Route exact path="/add" component={Add} />
             <Route exact path="/main" component={Main} />
             <Route exact path="/addother" component={Main} />
-            <Route exact path="/resources" component={Main} />
+            <Route exact path="/resource" component={Resource} />
             <Route path="/user/:username" render={(props) => {
                return <Profile {...props} />
             }} />

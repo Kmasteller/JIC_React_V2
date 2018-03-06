@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Inputs from '../../components/Input';
+
+import Input from '../../components/Input';
+import { Link } from "react-router-dom";
+import {Button, Icon} from 'react-materialize';
 import FooterMenu from '../../components/Footer-menu';
 import Menu from '../../components/Menu';
 import { Button, CardTitle, Card , Icon, Col, Input } from 'react-materialize';
@@ -61,9 +64,23 @@ class Add extends Component {
                   for the important people in your life.</h6>
             </div>
             <div className="modal-footer">
-              <a href="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</a>
+              <Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link>
             </div>
           </div>
+
+          {/* <Modal
+          header='Modal Header'
+          trigger={<Button><h4 align="center">Lets get started</h4>
+            <h6>First, we will walk you through adding the most basic bits of personal information.
+              <br />
+            <br />Afterwards, you will have the ability to add additional information to your own profile, OR, begin adding info
+            for the important people in your life.</h6></Button>}
+
+            footer='Modal Footer'
+            trigger={<Button><Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link></Button>}>
+
+          </Modal> */}
+
           {/* Main Card */}
           {/* <div className="col s12 s7"> */}
           <Col m={7} s={12}>
@@ -302,14 +319,14 @@ class Add extends Component {
           {/* end of submit button */}
           {/* Menu */}
           {/* <div class="fixed-action-btn toolbar ">
-            <a class="btn-floating pulse btn-large red">
+            <LINK class="btn-floating pulse btn-large red">
             <i class="large material-icons">menu</i>
-            </a>
+            </LINK>
             <ul>
-            <li class="waves-effect waves-light"><a href="main"><i class="material-icons">home</i></a></li>
-            <li class="waves-effect waves-light"><a href="addother.html"><i class="material-icons">add</i></a></li>
-            <li class="waves-effect waves-light"><a href="resources.html"><i class="material-icons">format_list_bulleted</i></a></li>
-            <li class="waves-effect waves-light"><a href="tour"><i class="material-icons">play_arrow</i></a></li>
+            <li class="waves-effect waves-light"><LINK to="main"><i class="material-icons">home</i></LINK></li>
+            <li class="waves-effect waves-light"><LINK to="addother.html"><i class="material-icons">add</i></LINK></li>
+            <li class="waves-effect waves-light"><LINK to="resources.html"><i class="material-icons">format_list_bulleted</i></LINK></li>
+            <li class="waves-effect waves-light"><LINK to="tour"><i class="material-icons">play_arrow</i></LINK></li>
             </ul>
         </div> */}
         </div>
@@ -346,7 +363,7 @@ export default Add;
 //                   for the important people in your life.</h6>
 //             </div>
 //             <div className="modal-footer">
-//               <a href="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</a>
+//               <LINK to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</LINK>
 //             </div>
 //           </div>
 //           {/* Main Card */}
@@ -505,14 +522,14 @@ export default Add;
 //           {/* end of submit button */}
 //           {/* Menu */}
 //           {/* <div class="fixed-action-btn toolbar ">
-//             <a class="btn-floating pulse btn-large red">
+//             <LINK class="btn-floating pulse btn-large red">
 //             <i class="large material-icons">menu</i>
-//             </a>
+//             </LINK>
 //             <ul>
-//             <li class="waves-effect waves-light"><a href="main"><i class="material-icons">home</i></a></li>
-//             <li class="waves-effect waves-light"><a href="addother.html"><i class="material-icons">add</i></a></li>
-//             <li class="waves-effect waves-light"><a href="resources.html"><i class="material-icons">format_list_bulleted</i></a></li>
-//             <li class="waves-effect waves-light"><a href="tour"><i class="material-icons">play_arrow</i></a></li>
+//             <li class="waves-effect waves-light"><LINK to="main"><i class="material-icons">home</i></LINK></li>
+//             <li class="waves-effect waves-light"><LINK to="addother.html"><i class="material-icons">add</i></LINK></li>
+//             <li class="waves-effect waves-light"><LINK to="resources.html"><i class="material-icons">format_list_bulleted</i></LINK></li>
+//             <li class="waves-effect waves-light"><LINK to="tour"><i class="material-icons">play_arrow</i></LINK></li>
 //             </ul>
 //         </div> */}
 //         </div>
