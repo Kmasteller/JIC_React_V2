@@ -207,8 +207,11 @@ const Resource = (props) => {
               </div> */}
 
             {/* End  */}
+                <div class="col s12 s7">
+                    <Menu />
+                </div>
         </div>
-        <Menu />
+
     </main>
     );
 };

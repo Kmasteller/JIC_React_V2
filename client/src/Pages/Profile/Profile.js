@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Update from '../../components/Update';
 import axios from 'axios';
+import Nav from '../../components/Nav';
 
 class Profile extends Component {
 
@@ -12,8 +13,8 @@ class Profile extends Component {
         isAdmin: false,
         currentUser: {
           id: null,
-          name: '',
-          username: '',
+          first_name: '',
+          last_name: '',
           email: '',
           profilePic: null,
           // photo: '',
@@ -30,7 +31,7 @@ class Profile extends Component {
 
   checkLogin = () => {
     axios.get("/api/session").then((res) => {
-      console.log(this.state, "this is checkloging state")
+      console.log(this.state, "this is checklogging state")
       console.log(res)
       this.setState({user: res.data});
       console.log(this.state)
@@ -44,7 +45,7 @@ class Profile extends Component {
       console.log(this.props, "props from profile")
       console.log(this.state, "props from state")
       this.checkLogin()
-      axios.get(`/api/profile/${this.props.match.params.username}`).then((response) => {
+      axios.get(`/api/profile/${this.props.match.params.email}`).then((response) => {
       console.log(response);
       this.setState({
         tempUser: response.data
@@ -58,17 +59,19 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <div className="card" style={this.cardStyle}>
           <img className="card-img-top" src={this.state.tempUser.profilePic} alt="" />
             <div className="card-body">
-              <h5 className="card-title">{this.state.tempUser.username}</h5>
+              <h5 className="card-title">{this.state.tempUser.email}</h5>
               <p className="card-text">Your Users Comments</p>
-            {this.state.user.currentUser.username === this.state.tempUser.username &&
+            {this.state.user.currentUser.email === this.state.tempUser.email &&
             <Link 
-            to={`/user/${this.props.match.params.username}/update`} 
+            to={`/user/${this.props.match.params.email}/update`} 
             className="btn btn-primary">Update</Link>}
-            <Route path="/user/:username/update" component={Update} />
+            <Route path="/user/:email/update" component={Update} />
             </div>
+            
         </div>
       </div>
     );
