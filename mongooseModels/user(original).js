@@ -8,12 +8,12 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 
   // date is just a string
-  first_name: {
+  username: {
     type: String,
     required: true,
     unique: true
   },
-  last_name: {
+  name: {
     type: String,
     required: true
   },
@@ -24,6 +24,10 @@ var userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  profilePic: {
+    type: String,
+    required: false
   },
   isAdmin: {
     type: Boolean,

@@ -62,7 +62,6 @@ module.exports = function (app) {
       })
   })
 
-  // signin enpoint logic
   app.post("/api/signUp", function (req, res, next) {
     console.log(req.body)
     //to store a hased password into the database we need to first salt our password. this will tell bcrypt how many time to pass through the users password to generate the hash
@@ -72,24 +71,52 @@ module.exports = function (app) {
         // Store hash in your password User.
         req.body.password = hash;
         User.create(req.body).then(function (UserData) {
-          console.log(UserData)
+          console.log("api signup" + UserData)
           var userObj = {
             id: UserData._id,
-            name: UserData.name,
-            username: UserData.username,
-            email: UserData.email,
-            profilePic: UserData.profilePic
+            first_name: UserData.first_name,
+            last_name: UserData.last_name,
+            email: UserData.email
           }
           req.session.user.loggedIn = true;
           req.session.user.currentUser = userObj;
           res.json(UserData);
         }).catch(function (err) {
 
-          res.status(404).send('ohhh no, there is a user with the username')
+          res.status(404).send('ohhh no, there is a user with the same email')
         })
       });
     });
   });
+
+  // signin endpoint logic
+  // app.post("/api/signUp", function (req, res, next) {
+  //   console.log(req.body)
+  //   //to store a hased password into the database we need to first salt our password. this will tell bcrypt how many time to pass through the users password to generate the hash
+  //   bcrypt.genSalt(10, function (err, salt) {
+  //     //the bcrypt hash method will then 
+  //     bcrypt.hash(req.body.password, salt, function (err, hash) {
+  //       // Store hash in your password User.
+  //       req.body.password = hash;
+  //       User.create(req.body).then(function (UserData) {
+  //         console.log(UserData)
+  //         var userObj = {
+  //           id: UserData._id,
+  //           name: UserData.name,
+  //           username: UserData.username,
+  //           email: UserData.email,
+  //           profilePic: UserData.profilePic
+  //         }
+  //         req.session.user.loggedIn = true;
+  //         req.session.user.currentUser = userObj;
+  //         res.json(UserData);
+  //       }).catch(function (err) {
+
+  //         res.status(404).send('ohhh no, there is a user with the username')
+  //       })
+  //     });
+  //   });
+  // });
 
   app.get("/api/logout", function (req, res, next) {
     req.session.user = {}
