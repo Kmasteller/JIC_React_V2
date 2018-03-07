@@ -6,7 +6,7 @@ const Nav = (props) => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="nav-link" to="/">Awesome React Auth</Link>
+      <Link className="nav-link" to="/">Just In Case</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -16,7 +16,7 @@ const Nav = (props) => {
             <NavLink exact className="nav-link" to="/">Home</NavLink>
           </li>
           <li className="nav-item">
-            {props.userInfo.loggedIn && <NavLink exact className="nav-link" to={`/user/${props.userInfo.currentUser.username}`}>Profile</NavLink>}
+            {props.userInfo.loggedIn && <NavLink exact className="nav-link" to={`/user/${props.userInfo.currentUser.email}`}>Profile</NavLink>}
           </li>
           <li className="nav-item">
             {props.userInfo.isAdmin && <NavLink exact className="nav-link"  to="/admin">Admin</NavLink>}
