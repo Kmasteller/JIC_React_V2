@@ -1,5 +1,5 @@
 const Profile = require('../mongooseModels/profile');
-const User = require('../mongooseModels/Users');
+const User = require('../mongooseModels/user');
 
 
 module.exports = {
