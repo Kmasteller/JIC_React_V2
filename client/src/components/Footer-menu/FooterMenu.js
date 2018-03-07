@@ -1,8 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import { Icon, Navbar, NavItem } from 'react-materialize';
 
 
-const FooterMenu = () =>
+class FooterMenu extends Component {
+
+  state = {
+    display: false
+  };
+  render() {
+    return (
 
   <Navbar className="red" right>
     
@@ -25,6 +31,8 @@ const FooterMenu = () =>
     //         <li className="waves-effect waves-light"><Link to="tour"><i class="material-icons">play_arrow</i></Link></li>
     //         </ul>
     //     </div> */}
-
+    );
+  }
+}
 export default FooterMenu;
 
