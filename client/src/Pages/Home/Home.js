@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+class Home extends Component {
+  state = {
+    password: '',
+    first_name: '',
+    last_name: '',
+    email: ''
+  }
 
-const Home = (props) => {
+  handleChange = (event) => {
+    console.log(event.target.value);
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
+  render() {
 
   return (
     <main>
@@ -76,46 +90,46 @@ const Home = (props) => {
               <div className="modal-content">
                 <h5>Fill me out ... </h5>
                 <div id="register" className="col s12">
-                  <form className="col s12" id="sign-up" name="sign-up" method="POST" action="/signup">
+                  <form className="col s12" id="sign-up" name="sign-up">
                     <div className="form-container">
                       <div className="row">
                         <div className="input-field col s6">
-                          <input id="last_name" type="text" className="validate" />
-                          <label htmlFor="last_name">First Name</label>
+                          <input id="first_name" type="text" className="validate" name="first_name" value={this.state.first_name} onChange={this.handleChange} />
+                          <label htmlFor="first_name">First Name</label>
                         </div>
                         <div className="input-field col s6">
-                          <input id="last_name" type="text" className="validate" />
+                          <input id="last_name" type="text" className="validate" name="last_name" value={this.state.last_name} onChange={this.handleChange} />
                           <label htmlFor="last_name">Last Name</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" type="email" className="validate" />
+                          <input id="email" type="email" className="validate" name="email" value={this.state.email} onChange={this.handleChange}/>
                           <label htmlFor="email">Email</label>
                         </div>
                       </div>
-                      <div className="row">
+                      {/* <div className="row">
                         <div className="input-field col s12">
-                          <input id="email-confirm" type="email" className="validate" />
+                          <input id="email-confirm" type="email" className="validate" name="email-confirm" value={this.state.email-confirm} onChange={this.handleChange} />
                           <label htmlFor="email-confirm">Email Confirmation</label>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="password" type="password" className="validate" />
+                          <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange} />
                           <label htmlFor="password">Password</label>
                         </div>
                       </div>
-                      <div className="row">
+                      {/* <div className="row">
                         <div className="input-field col s12">
-                          <input id="password-confirm" type="password" className="validate" />
+                          <input id="password-confirm" type="password" className="validate" name="password-confirm" value={this.state.password-confirm} onChange={this.handleChange} />
                           <label htmlFor="password-confirm">Password Confirmation</label>
                         </div>
-                      </div>
+                      </div> */}
                       {/* submit button */}
                       <div className="row">
                         <div className="col s12">
-                          <a href="add.html" type="submit" name="action" id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</a>
+                          <Link to="/add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
                         </div>
                         {/* end submit button */}
                       </div>
@@ -144,6 +158,7 @@ const Home = (props) => {
         </div> */}
       </div></main>
 );
+};
 };
 
 export default Home;

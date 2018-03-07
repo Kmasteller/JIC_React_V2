@@ -20,10 +20,9 @@ class App extends Component {
       isAdmin: false,
       currentUser: {
         id: null,
-        name: '',
-        username: '',
-        email: '',
-        profilePic: null
+        first_name: '',
+        last_name: '',
+        email: ''
       }
     }
   }
@@ -35,7 +34,7 @@ class App extends Component {
 
   checkLogin = () => {
     axios.get("/api/session").then((res) => {
-      console.log(this.state, "this is checkloging state")
+      console.log(this.state, "this is checklogging state")
       console.log(res)
       this.setState({ user: res.data});
       console.log(this.state)
@@ -61,7 +60,7 @@ class App extends Component {
   userDidSignup = (userData) => {
     console.log(userData)
     axios.post("/api/signUp", userData).then((res) => {
-      console.log(res)
+      console.log(res, "from signup")
       this.checkLogin()
     })
   }
@@ -79,7 +78,7 @@ class App extends Component {
         <div>
           {/* <Nav userInfo={this.state.user} logout={this.userLogOut}/> */}
           <Switch>  
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} /> }/>
             <Route exact path="/tour" component={Tour} />
             <Route exact path="/add" component={Add} />
             <Route exact path="/main" component={Main} />
@@ -109,9 +108,6 @@ class App extends Component {
             )} />
             <Route exact path="/add" render={(props) => (
               <Add {...props} handleAdd={this.userDidAdd} />
-            )} />
-            <Route exact path="/signup" render={() => (
-              <Signup handleSignup={this.userDidSignup} />
             )} />
             <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
