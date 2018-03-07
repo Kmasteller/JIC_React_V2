@@ -29,6 +29,9 @@ var userSchema = new Schema({
     type: Boolean,
     default: false
   },
+
+  Profile: [{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}]
+
 });
 
 // Create the Note model using the noteSchema

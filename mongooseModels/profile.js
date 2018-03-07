@@ -8,31 +8,35 @@ var Schema = mongoose.Schema;
 var addSchema = new Schema({
 
   // date is just a string
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
+  // username: {
+  //   type: String,
+  //   required: true,
+  //   unique: true
+  // },
+  first_name: {
     type: String,
     required: true
   },
-  password: {
+  last_name: {
     type: String,
     required: true
   },
-  profilePic: {
-    type: String,
-    required: false
-  },
-  isAdmin: {
-    type: Boolean,
-    default: false
-  },
+  // email: {
+  //   type: String,
+  //   required: true
+  // },
+  // password: {
+  //   type: String,
+  //   required: true
+  // },
+  // profilePic: {
+  //   type: String,
+  //   required: false
+  // },
+  // isAdmin: {
+  //   type: Boolean,
+  //   default: false
+  // },
   photo: {
     type: String,
     required: false
@@ -65,10 +69,13 @@ var addSchema = new Schema({
     type: String,
     required: false
   },
+
+  User: {type: mongoose.Schema.Types.ObjectId, ref: "User"}
+
 });
 
 // Create the Add model using the addSchema
-var Add = mongoose.model("Add", addSchema);
+var Profile = mongoose.model("Profile", addSchema);
 
 // Export the Add model
-module.exports = Add;
+module.exports = Profile;
