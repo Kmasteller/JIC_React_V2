@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
-import Signup from "./Pages/Signup";
+// import Signup from "./Pages/Signup";
 import Profile from "./Pages/Profile";
 import Tour from "./Pages/Tour";
 import Add from "./Pages/Add";

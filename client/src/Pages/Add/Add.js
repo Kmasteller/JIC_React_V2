@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Input from '../../components/Input';
 import { Link } from "react-router-dom";
-import FooterMenu from '../../components/Footer-menu';
+// import FooterMenu from '../../components/Footer-menu';
 import Menu from '../../components/Menu';
-import { Icon, Button, CardTitle, Card , Col } from 'react-materialize';
+import { Button, CardTitle, Card , Col } from 'react-materialize';
 
 class Add extends Component {
   
@@ -309,12 +309,17 @@ class Add extends Component {
             <div className="col s12">
               {/* <button onClick={() => this.props.handleAdd(this.state)}>Login</button> */}
               <Button className='red' waves='light' onClick={() => this.props.handleAdd(this.state)}>Save</Button>
+                
               {/* <button className="waves-effect red btn" onClick={() => this.props.handleAdd(this.state)}><i className="material-icons left">save</i>Save</button> */}
               {/* <button className="waves-effect red btn" id="submit-profile" type="submit" name="action"><i className="material-icons left">save</i>Save</button> */}
             </div>
+              
           </div>
-            <Menu />
-            <FooterMenu />
+            <div className="row center">
+              <div className="col s12">
+                <Menu />
+                </div>
+                </div>
           {/* end of submit button */}
           {/* Menu */}
           {/* <div class="fixed-action-btn toolbar ">
