@@ -7,6 +7,8 @@ const mongoose = require('mongoose')
 //this is for Sequelize comment this out if using mongoose
 const db = require('./models')
 
+const userCtrl = require('./controllers/profileController.js');
+const storyCtrl = require('./controllers/userController.js');
 
 const PORT = process.env.PORT || 3001;
 
