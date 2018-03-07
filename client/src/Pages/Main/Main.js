@@ -38,7 +38,6 @@ const Main = (props) => {
         <div className="fixed-action-btn toolbar ">
           <Link className="btn-floating pulse btn-large red" />
             <i className="large material-icons">menu</i>
-          
           <ul>
             <li className="waves-effect waves-light"><Link to="main" /><i className="material-icons">home</i></li>
             <li className="waves-effect waves-light"><Link to="addother.html" /><i className="material-icons">add</i></li>
