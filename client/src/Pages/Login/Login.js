@@ -37,7 +37,7 @@ class Login extends Component {
                 <br />
                 <Input placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} />
                 
-                <Link to="/profile" onClick={() => this.props.handleLogin(this.state)} id="login" className="modal-action modal-close waves-effect red btn">Login</Link>
+                <Link to="/login" onClick={() => this.props.handleLogin(this.state)} id="login" className="modal-action modal-close waves-effect red btn">Login</Link>
 
               </div>
             </div>
