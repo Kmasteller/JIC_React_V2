@@ -28,12 +28,8 @@ class Menu extends Component {
       }
 
     return (
-      
 <div className="toolbar">
-      
         {this.state.display ? <Button className='btn-floating pulse btn-large red' style={bottomFix} waves='light' onClick={this.toggleHamburger}>
-
-        <div className="row center">
           <Icon right>menu</Icon> </Button> : 
         
 
@@ -45,10 +41,7 @@ class Menu extends Component {
           <NavItem onClick={this.toggleHamburger}><Icon>arrow_drop_down</Icon></NavItem>
         </Navbar>
         }
-
-        </div>
   </div>
-
     );
   }
 }
