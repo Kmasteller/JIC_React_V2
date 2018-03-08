@@ -10,7 +10,7 @@ class Login extends Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target.value);
+    console.log(event.target.value, "event.target.value");
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -20,6 +20,7 @@ class Login extends Component {
 
     return (
       <main>
+        
         {/* Your content here */}
         {/* Animated Gif and Main Logo Card */}
         <div className="card z-depth-0">
@@ -43,7 +44,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        
+
         </main>
     );
   };
