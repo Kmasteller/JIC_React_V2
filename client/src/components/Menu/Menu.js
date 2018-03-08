@@ -20,12 +20,20 @@ class Menu extends Component {
   }
 
   render() {
+
+    const bottomFix = {
+      position: "fixed",
+      bottom: "0",
+      right: "0"
+      }
+
     return (
       
 <div className="toolbar">
+      
+        {this.state.display ? <Button className='btn-floating pulse btn-large red' style={bottomFix} waves='light' onClick={this.toggleHamburger}>
+
         <div className="row center">
-          
-        {this.state.display ? <Button className='btn-floating pulse btn-large red clearfix' waves='light' onClick={this.toggleHamburger}>
           <Icon right>menu</Icon> </Button> : 
         
 
@@ -34,7 +42,7 @@ class Menu extends Component {
           <NavItem href='addother.html'><Icon>add</Icon></NavItem>
           <NavItem href='resources.html'><Icon>format_list_bulleted</Icon></NavItem>
           <NavItem href='tour'><Icon>play_arrow</Icon></NavItem>
-            <NavItem onClick={this.toggleHamburger}><Icon>arrow_drop_down</Icon></NavItem>
+          <NavItem onClick={this.toggleHamburger}><Icon>arrow_drop_down</Icon></NavItem>
         </Navbar>
         }
 
