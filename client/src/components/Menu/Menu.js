@@ -29,7 +29,14 @@ class Menu extends Component {
 
     return (
 <div className="toolbar">
+<<<<<<< HEAD
+        <div className="row center">
+        
+          
+        {this.state.display ? <Button className='btn-floating pulse btn-large red' waves='light' onClick={this.toggleHamburger}>
+=======
         {this.state.display ? <Button className='btn-floating pulse btn-large red' style={bottomFix} waves='light' onClick={this.toggleHamburger}>
+>>>>>>> eb77eeb0121a694fa6c1845eb71860811f1aa120
           <Icon right>menu</Icon> </Button> : 
         
 
