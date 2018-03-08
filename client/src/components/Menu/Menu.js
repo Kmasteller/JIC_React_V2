@@ -33,7 +33,7 @@ class Menu extends Component {
           <Icon right>menu</Icon> </Button> : 
         
 
-          <Navbar className="red btn-large">
+        <Navbar className="red btn-large">
           <NavItem href='main'><Icon>home</Icon></NavItem>
           <NavItem href='addother.html'><Icon>add</Icon></NavItem>
           <NavItem href='resources.html'><Icon>format_list_bulleted</Icon></NavItem>
@@ -47,4 +47,3 @@ class Menu extends Component {
 }
 
 export default Menu;
-
