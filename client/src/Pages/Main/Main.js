@@ -1,13 +1,53 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Button, CardTitle, Card, Row, Col } from 'react-materialize';
+import Menu from '../../components/Menu';
 
 const Main = (props) => {
   console.log(props)
+
+  const centerAlign = {
+    textAlign: "center"
+    }
+
+  const buttonWidth = {
+    width: "320px"
+    }
+
   return (
     <main>
       <div>
         {/* Main Card */}
-        <div className="col s12 s7">
+        <Row>
+          <Col m={7} s={12}>
+            <Card className="card medium" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt='First Aid Kit'></CardTitle>} 
+            actions={[<Button style={buttonWidth} waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
+              <div>
+                <br /><br />
+                <div className="row">
+                  <div className="col s12">
+                    {/* Needs to render dynamically */}
+                    <h6><strong>Sally Bananas</strong></h6>
+                  </div>
+                </div>
+                <div className="row">
+                {/* Needs to render dynamically */}
+                  <div className="col s6">
+                    <p>DOB: 12/7/80</p>
+                    <p>Height: 5' 9"</p>
+                    <p>Hair: Brown</p>
+                  </div>
+                  <div className="col s6">
+                    <p>AGE: 36</p>
+                    <p>Weight: 150 lbs</p>
+                    <p>Eye: Brown</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </Col>
+        </Row>
+        {/* <div className="col s12 s7">
           <div className="card horizontal">
             <div className="card-image">
               <img src="./assets/images/profile/you.JPG" alt="" />
@@ -29,24 +69,13 @@ const Main = (props) => {
                 </div>
               </div>
               <div className="card-action">
-                <p className="black-text text-darken-4">YOU<Link to="profile.html" /><i className="material-icons right">more_horiz</i></p>
+                <Link className="black-text text-darken-4" to="profile">YOU</Link>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="fixed-action-btn toolbar ">
-          <Link className="btn-floating pulse btn-large red" />
-            <i className="large material-icons">menu</i>
-          
-          <ul>
-            <li className="waves-effect waves-light"><Link to="main" /><i className="material-icons">home</i></li>
-            <li className="waves-effect waves-light"><Link to="addother.html" /><i className="material-icons">add</i></li>
-            <li className="waves-effect waves-light"><Link to="resources.html" /><i className="material-icons">format_list_bulleted</i></li>
-            <li className="waves-effect waves-light"><Link to="tour" /><i className="material-icons">play_arrow</i></li>
-          </ul>
-        </div>
+        </div> */}
       </div>
+      <Menu />
     </main>
   );
 };

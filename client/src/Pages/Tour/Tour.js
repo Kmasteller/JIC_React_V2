@@ -18,28 +18,28 @@ const Tour = (props) => {
                         <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="pink" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob2.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="purple" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob3.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="indigo" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob4.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="blue" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob5.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="light-blue" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob6.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="cyan" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob7.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="teal" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob8.png" alt="" max-width="375px" max-height="432px" />
                   </div>
                   <div className="green" style={centerAlign}>
-                        <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
+                        <img src="../../../assets/images/tour/ob9.png" alt="" max-width="375px" max-height="432px" />
                   </div>
 
             </Carousel>
