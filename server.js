@@ -5,7 +5,7 @@ const session = require('express-session');
 const path = require("path");
 const mongoose = require('mongoose')
 //this is for Sequelize comment this out if using mongoose
-const db = require('./models')
+// const db = require('./models')
 
 const userCtrl = require('./controllers/profileController.js');
 const storyCtrl = require('./controllers/userController.js');
@@ -29,10 +29,9 @@ function userSetup(req, res, next) {
     req.session.user = {}
     req.session.user.currentUser = {
       id: null,
-      name: '',
-      username: '',
-      email: '',
-      profilePic: null
+      first_name: '',
+      last_name: '',
+      email: ''
     }
     req.session.user.loggedIn = false;
     req.session.user.isAdmin = false;

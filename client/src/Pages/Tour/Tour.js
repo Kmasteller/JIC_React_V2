@@ -11,8 +11,11 @@ const Tour = (props) => {
     textAlign: "center"
       }
 
+
+
       return (
             <main>
+
             <Carousel options={{ fullWidth: true, indicators: true, noWrap: true, duration: 100 }}>
                   <div className="red" style={centerAlign}>
                         <img src="../../../assets/images/tour/ob1.png" alt="" max-width="375px" max-height="432px" />
@@ -43,6 +46,7 @@ const Tour = (props) => {
                   </div>
 
             </Carousel>
+
 
       {/* Carousel Option 2 */}
       {/* <Carousel images={[

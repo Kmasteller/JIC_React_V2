@@ -84,7 +84,7 @@ class App extends Component {
             <Route exact path="/main" component={Main} />
             <Route exact path="/addother" component={Main} />
             <Route exact path="/resource" component={Resource} />
-            <Route path="/user/:username" render={(props) => {
+            <Route path="/user/:email" render={(props) => {
                return <Profile {...props} />
             }} />
 
