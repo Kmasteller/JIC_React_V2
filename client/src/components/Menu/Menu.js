@@ -11,7 +11,7 @@ class Menu extends Component {
 }
 
   toggleHamburger = (e) => {
-    console.log("e: " + e);
+    console.log("e: ", e);
     e.preventDefault();
     let setDisplay = !this.state.display;
     this.setState({
@@ -35,14 +35,13 @@ class Menu extends Component {
             waves='light' 
             onClick={this.toggleHamburger}>
             <Icon>menu</Icon>
-            </Button>}
-            options='right'          
+            </Button>}         
             >
               <SideNavItem href='main' icon='home'>Home Page</SideNavItem>
               <SideNavItem href='addother' icon='add'>Add a Card</SideNavItem>
               <SideNavItem href='resources' icon='format_list_bulleted'>Resources</SideNavItem>
               <SideNavItem href='tour' icon='play_arrow'>Take a Tour</SideNavItem>
-              <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem>
+              {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
         </SideNav>
       </main>
     );
