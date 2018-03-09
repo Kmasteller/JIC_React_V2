@@ -24,7 +24,7 @@ class Add extends Component {
   }
 
  componentWillMount () {
-   console.log(this.props, "this is props")
+   console.log(this.props, "this is props add.js componentWillMount")
  }
 
   handleChange = (event) => {

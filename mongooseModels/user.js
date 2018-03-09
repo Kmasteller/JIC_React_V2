@@ -10,8 +10,7 @@ var userSchema = new Schema({
   // date is just a string
   first_name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   last_name: {
     type: String,
@@ -19,7 +18,8 @@ var userSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   password: {
     type: String,
