@@ -53,19 +53,21 @@ class Add extends Component {
       <form id="profile" name="profile" >
         {/* Your content here */}
         <div>
-          {/* Modal Structure */}
-          <div id="add-modal" className="modal">
-            <div className="modal-content">
-              <h4 align="center">Lets get started</h4>
-              <h6>First, we will walk you through adding the most basic bits of personal information.
+          {/* Informational Modal Structure - Opens on Page Load */}
+            <div id="add-modal" className="modal">
+              <div className="modal-content">
+                <h4 align="center">Lets get started</h4>
+                  <h6>First, we will walk you through adding the most basic bits of personal information.
                   <br />
-                <br />Afterwards, you will have the ability to add additional information to your own profile, OR, begin adding info
-                  for the important people in your life.</h6>
+                  <br />
+                  Afterwards, you will have the ability to add additional information to your own profile, OR, begin adding info
+                  for the important people in your life.
+                  </h6>
+              </div>
+              <div className="modal-footer">
+                <Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link>
+              </div>
             </div>
-            <div className="modal-footer">
-              <Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link>
-            </div>
-          </div>
 
           {/* <Modal
           header='Modal Header'
