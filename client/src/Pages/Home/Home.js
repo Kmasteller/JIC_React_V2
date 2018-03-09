@@ -134,7 +134,6 @@ class Home extends Component {
                             <label htmlFor="password-confirm">Password Confirmation</label>
                           </div>
                         </div> */}
-
                         {/* submit button */}
                         <div className="row">
                           <div className="col s12">
@@ -146,9 +145,6 @@ class Home extends Component {
                     </form>
                   </div>
                 </div>
-                <br />
-                <br />
-                <br />
               </div>
               <br />
               <img className="landing-logo" src width="80%" height="" alt="" />
