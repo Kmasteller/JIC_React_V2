@@ -68,30 +68,18 @@ class Add extends Component {
                 <Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link>
               </div>
             </div>
-
-          {/* <Modal
-          header='Modal Header'
-          trigger={<Button><h4 align="center">Lets get started</h4>
-            <h6>First, we will walk you through adding the most basic bits of personal information.
-              <br />
-            <br />Afterwards, you will have the ability to add additional information to your own profile, OR, begin adding info
-            for the important people in your life.</h6></Button>}
-
-            footer='Modal Footer'
-            trigger={<Button><Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link></Button>}>
-
-          </Modal> */}
-
-          {/* Main Card */}
-          {/* <div className="col s12 s7"> */}
-          <Col m={7} s={12}>
-            <Card className='card horizontal profile-pic' header={<CardTitle image= '../../../assets/images/addform/addformperson.jpg' />}>
-              Use a clear, well lit photo of your face.
-              <br />
-              <Button waves='light' className='red btn' icon='photo_camera'/>
-              <Input s={6} name="photo" value={this.state.photo} onChange={this.handleChange} />
-            </Card>
-          </Col>
+          {/* End of Informational Modal Structure - Opens on Page Load */}
+          
+          {/* Main Card Area */}
+            {/* <div className="col s12 s7"> */}
+            <Col m={7} s={12}>
+              <Card className='card horizontal profile-pic' header={<CardTitle image= '../../../assets/images/addform/addformperson.jpg' />}>
+                Use a clear, well lit photo of your face.
+                <br />
+                <Button waves='light' className='red btn' icon='photo_camera'/>
+                <Input s={6} name="photo" value={this.state.photo} onChange={this.handleChange} />
+              </Card>
+            </Col>
             {/* <div className="card horizontal profile-pic">
               <div className="card-image">
                 <img id="photoPreview" src="../../../assets/images/addform/addformperson.jpg" alt=""/>
