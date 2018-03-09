@@ -32,9 +32,13 @@ class Home extends Component {
           <span className="welcome"><h4 align="center">...<span id="typed" /></h4></span>
           <br />
           <div className="row">
+          {/* Tour Button */}
             <div className="col s12"><Link className="waves-effect red btn" to="/tour" data-transition="slide" ><i className="material-icons left">play_arrow</i>Take Tour</Link></div>
             <br /><br /><br />
-            {/* Bottom Modal Trigger for Sign In */}
+          {/* end of tour button */}
+          </div>
+          <div className="row">
+          {/* Sign in Button and Bottom Modal Trigger for Sign In */}
             <div className="col s6"><a className="waves-effect black btn modal-trigger" href="#modal1"><i className="material-icons left">person</i>Sign In</a></div>
             {/* Modal Structure */}
             <div id="modal1" className="modal bottom-sheet">
@@ -69,7 +73,8 @@ class Home extends Component {
               </div>
             </div>
             {/* End of Modal */}
-            {/* Modal Trigger */}
+
+            {/* Sign up button and Modal Trigger */}
             <div className="col s6"><a className="waves-effect black btn modal-trigger" href="#modal2"><i className="material-icons left">person_add</i>Sign Up</a></div>
             {/* Modal Structure */}
             <div id="modal2" className="modal modal-fixed-footer">
