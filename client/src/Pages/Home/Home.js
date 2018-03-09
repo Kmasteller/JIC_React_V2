@@ -42,7 +42,7 @@ class Home extends Component {
                 <h5>Sign into your <b style={{ fontSize: 20 }}><strong>JUST<font color="red">IN</font>CASE</strong></b> account</h5>
               </div>
               <div className="container">
-                <form className="col s12" method="post">
+                <form className="col s12">
                   <div className="row">
                     <div className="col s12">
                     </div>
@@ -129,7 +129,7 @@ class Home extends Component {
                       {/* submit button */}
                       <div className="row">
                         <div className="col s12">
-                          <Link to="/add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          <Link to="add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
                         </div>
                         {/* end submit button */}
                       </div>
