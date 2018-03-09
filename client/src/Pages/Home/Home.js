@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
+    logemail: '',
+    logpassword: '',
     password: '',
     first_name: '',
     last_name: '',
@@ -53,23 +55,22 @@ class Home extends Component {
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="email" name="email" id="email" />
-                            <label htmlFor="email">Enter your email</label>
+                            <input className="validate" type="email" name="logemail" id="logemail" value={this.state.logemail} onChange={this.handleChange} />
+                              <label htmlFor="email">Enter your email</label>
                           </div>
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="password" name="password" id="password" />
-                            <label htmlFor="password">Enter your password</label>
-                          </div>
-                          <label style={{ float: 'right' }}>
+                            <input className="validate" type="password" name="logpassword" id="logpassword" value={this.state.logpassword} onChange={this.handleChange} />
+                              <label htmlFor="password">Enter your password</label></div>
+                              <label style={{ float: 'right' }}>
                             <a className="pink-text" href="#!"><b>Forgot Password?</b></a>
                           </label>
                         </div>
                       </form>
                   </div>
                   <div className="modal-footer">
-                    <a href="main.html" className="modal-action modal-close waves-effect red btn">Go</a>
+                    <a href="main" className="modal-action modal-close waves-effect red btn">Go</a>
                   </div>
                 </div>
                 {/* End of Modal */}
