@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Icon, Navbar, NavItem } from 'react-materialize';
+import { Button, Icon, SideNav, SideNavItem } from 'react-materialize';
 
 class Menu extends Component {
   constructor (props) {
@@ -28,23 +28,25 @@ class Menu extends Component {
       }
 
     return (
-<div className="toolbar">
-        {this.state.display ? <Button className='btn-floating pulse btn-large red' style={bottomFix} waves='light' onClick={this.toggleHamburger}>
-          <Icon right>menu</Icon> </Button> : 
-        
-
-          <Navbar className="red btn-large">
-          <NavItem href='main'><Icon>home</Icon></NavItem>
-          <NavItem href='addother.html'><Icon>add</Icon></NavItem>
-          <NavItem href='resources.html'><Icon>format_list_bulleted</Icon></NavItem>
-          <NavItem href='tour'><Icon>play_arrow</Icon></NavItem>
-          <NavItem onClick={this.toggleHamburger}><Icon>arrow_drop_down</Icon></NavItem>
-        </Navbar>
-        }
-  </div>
+      <main>
+        <SideNav
+            trigger={<Button className='btn-floating pulse btn-large red' 
+            style={bottomFix} 
+            waves='light' 
+            onClick={this.toggleHamburger}>
+            <Icon>menu</Icon>
+            </Button>}
+            options='right'          
+            >
+              <SideNavItem href='main' icon='home'>Home Page</SideNavItem>
+              <SideNavItem href='addother' icon='add'>Add a Card</SideNavItem>
+              <SideNavItem href='resources' icon='format_list_bulleted'>Resources</SideNavItem>
+              <SideNavItem href='tour' icon='play_arrow'>Take a Tour</SideNavItem>
+              <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem>
+        </SideNav>
+      </main>
     );
   }
 }
 
 export default Menu;
-
