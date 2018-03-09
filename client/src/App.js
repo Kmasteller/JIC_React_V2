@@ -29,22 +29,22 @@ class App extends Component {
   
   componentDidMount() {
     this.checkLogin()
-    console.log(this.state)
+    console.log(this.state, "Component did mount")
   }
 
   checkLogin = () => {
     axios.get("/api/session").then((res) => {
-      console.log(this.state, "this is checklogging state")
-      console.log(res)
+      console.log(this.state, "this is check logging state")
+      console.log(res, "logging state res")
       this.setState({ user: res.data});
-      console.log(this.state)
+      console.log(this.state, "logging state this state")
     })
   }
   
   userDidLogin = (userData) => {
-    console.log(userData)
+    console.log(userData, "user did login")
     axios.post("/api/login", userData).then((res) => {
-      console.log(res)
+      console.log(res, "user did login res")
       this.checkLogin()
     })
   }

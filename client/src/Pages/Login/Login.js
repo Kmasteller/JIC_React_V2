@@ -10,7 +10,7 @@ class Login extends Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target.value);
+    console.log(event.target.value, "event.target.value");
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -20,6 +20,7 @@ class Login extends Component {
 
     return (
       <main>
+        
         {/* Your content here */}
         {/* Animated Gif and Main Logo Card */}
         <div className="card z-depth-0">
@@ -37,13 +38,13 @@ class Login extends Component {
                 <br />
                 <Input placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} />
                 
-                <Link to="/profile" onClick={() => this.props.handleLogin(this.state)} id="login" className="modal-action modal-close waves-effect red btn">Login</Link>
+                <Link to="/login" onClick={() => this.props.handleLogin(this.state)} id="login" className="modal-action modal-close waves-effect red btn">Login</Link>
 
               </div>
             </div>
           </div>
         </div>
-        
+
         </main>
     );
   };

@@ -1,5 +1,3 @@
-var mongoose = require("mongoose");
-
 var User = require('../mongooseModels/user.js')
 //bringing in the bcrypt npm module
 var bcrypt = require('bcrypt');
@@ -11,23 +9,22 @@ module.exports = function (app) {
   //login endpoint
   app.post("/api/login", function (req, res) {
     //will show our user data from front end
-    console.log("Req.body!" , req.body)
+    console.log(req.body)
     //will see the currently formatted session object with user data
-    console.log("Session!!" , req.session)
+    console.log(req.session)
     //initalizing user data variable to an empty object. this will hold our user data on this endpoint
     var user = {};
-    console.log("Req.body.email", req.body.email);
     //using our users model to query our MySQL database for user info where ther username equals the username we passed in from the front end
     User.findOne({
-      email: req.body.email
+      username: req.body.username
     })
       .then(function (UserData) {
-        console.log("User info: " , UserData, "this is user data");
+        console.log(UserData, "this is user data");
         //if the database does not find a user with that username we will revice a null value from our database. null values are a little "special" in relation to JS.
         //this is how we would correctly do a check for a null value if recieved
         if (!UserData && typeof UserData === "object") {
           //this will send an error code to our front end for the user not existing
-          res.status(404).send('ohhh no, there is a problem with the email or password!')
+          res.status(404).send('ohhh no, there is a problem with the username or password!')
         } else {
           //here we bring in bcrypt. bcrypt's compair method asks for a few things. it asks for the first parameter you send in a plain text password. 
           //AKA: our users password coming in from the front end. the second parameter bcrypt wants us to pass in the hashed password that we stored in the User. lastly it wants a callback funtion
@@ -38,14 +35,15 @@ module.exports = function (app) {
 
             //if the response is false send an error to the front end letting the user know that the passwords did not match.
             if (!bcryptRes) {
-              res.status(404).send('ohhh no, there is a problem with the email or password!')
+              res.status(404).send('ohhh no, there is a problem with the username or password!')
             } else {
               //if the response from bcrypt was true we know our users password matched and we can now format the user data coming from the database to be sent to the font end
               var userObj = {
                 id: UserData.id,
-                first_name: UserData.first_name,
-                last_name: UserData.last_name,
-                email: UserData.email
+                name: UserData.name,
+                username: UserData.username,
+                email: UserData.email,
+                profilePic: UserData.profilePic
               }
               //we update the loggedIn key to have a true value. we can use this value on the fron end to see if the user is logged in or not.
               req.session.user.loggedIn = true;
@@ -60,7 +58,7 @@ module.exports = function (app) {
         }
       }).catch(function (err) {
         console.log(err, " this is error");
-        res.status(404).send('ohhh no, there is a user with the same email')
+        res.status(404).send('ohhh no, there is a user with the username')
       })
   })
 
@@ -133,56 +131,57 @@ module.exports = function (app) {
   });
 
   //get user info endpoint via query params
-  app.get('/api/profile/:email', function (req, res, next) {
+  app.get('/api/profile/:username', function (req, res, next) {
     console.log(req.param);
     User.findOne({
-      email: req.params.email
+      username: req.params.username
     }).then(function (UserData) {
       console.log(UserData)
       var userObj = {
         id: UserData.id,
-        first_name: UserData.first_name,
-        last_name: UserData.last_name,
-        email: UserData.email
+        name: UserData.name,
+        username: UserData.username,
+        email: UserData.email,
+        profilePic: UserData.profilePic
       }
       req.session.user.loggedIn = true;
       req.session.user.currentUser = userObj;
       res.json(userObj)
     })
   });
-//   //update profile route
-//   app.put('/api/update/:username', function (req, res, next) {
-//     req.session.user.currentUser = req.body
-//     var loggedUser = req.session.user.currentUser;
-//     if (true) {
-//       User.update({
-//         username: loggedUser.username,
-//         name: loggedUser.name,
-//         email: loggedUser.email,
-//         profilePic: loggedUser.profilePic
-//       }, {
-//           where: {
-//             username: req.params.username
-//           }
-//         }).then(function (UserData) {
-//           res.json(UserData)
-//         })
-//     } else {
-//       res.status(404).json("please log in to update profile")
-//     }
-//   });
-// }
+  //   //update profile route
+  //   app.put('/api/update/:username', function (req, res, next) {
+  //     req.session.user.currentUser = req.body
+  //     var loggedUser = req.session.user.currentUser;
+  //     if (true) {
+  //       User.update({
+  //         username: loggedUser.username,
+  //         name: loggedUser.name,
+  //         email: loggedUser.email,
+  //         profilePic: loggedUser.profilePic
+  //       }, {
+  //           where: {
+  //             username: req.params.username
+  //           }
+  //         }).then(function (UserData) {
+  //           res.json(UserData)
+  //         })
+  //     } else {
+  //       res.status(404).json("please log in to update profile")
+  //     }
+  //   });
+  // }
 
   //update profile route
-  app.put('/api/update/:email', function (req, res, next) {
+  app.put('/api/update/:username', function (req, res, next) {
     req.session.user.currentUser = req.body
     var loggedUser = req.session.user.currentUser;
     if (true) {
       User.update({
+        username: loggedUser.username,
+        name: loggedUser.name,
         email: loggedUser.email,
-        first_name: loggedUser.first_name,
-        last_name: loggedUser.last_name,
-        email: loggedUser.email,
+        profilePic: loggedUser.profilePic,
         photo: UserData.photo,
         birthdate: UserData.birthdate,
         address: UserData.address,
@@ -193,7 +192,7 @@ module.exports = function (app) {
         eyes: UserData.eyes
       }, {
           where: {
-            email: req.params.email
+            username: req.params.username
           }
         }).then(function (UserData) {
           res.json(UserData)
