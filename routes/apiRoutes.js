@@ -125,9 +125,16 @@ module.exports = function (app) {
   // });
 
   app.get("/api/logout", function (req, res, next) {
-    req.session.user = {}
-    req.session.user.loggedIn = false;
-    req.session.user.isAdmin = false;
+    req.session.user =  {
+      loggedIn: false,
+      isAdmin: false,
+      currentUser: {
+        id: null,
+        first_name: '',
+        last_name: '',
+        email: ''
+      }
+    }
     res.json(req.session.user)
   });
 
