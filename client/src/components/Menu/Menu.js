@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'react-materialize';
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
   constructor (props) {
@@ -25,11 +26,11 @@ class Menu extends Component {
 
         <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: "45bs", right: "24px"}}>
                     
-              <Button floating href='main' icon='home' className='red' />
-              <Button floating href='addother' icon='add' className='red' />
-              <Button floating href='resources' icon='format_list_bulleted' className='red' />
-              <Button floating href='tour' icon='play_arrow' className='red' />
-              <Button floating onClick={this.userLogOut} href='/' icon='remove_circle_outline' className='red' />
+              <Link to='/'><Button floating icon='home' className='red' /></Link>
+              <Link to='add'><Button floating icon='add' className='red' /></Link>
+              <Link to='resource'><Button floating icon='format_list_bulleted' className='red' /></Link>
+              <Link to='tour'><Button floating icon='play_arrow' className='red' /></Link>
+              <Link to='/'><Button floating onClick={this.userLogOut} icon='remove_circle_outline' className='red' /></Link>
               {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
          </Button> 
     );
