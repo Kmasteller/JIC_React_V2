@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+// import { Button } from "react-materialize";
 
 class Home extends Component {
   state = {
@@ -70,7 +71,7 @@ class Home extends Component {
                       </form>
                   </div>
                   <div className="modal-footer">
-                    <a href="main" className="modal-action modal-close waves-effect red btn">Go</a>
+                    <Link to="/main" onClick={() => this.props.handleLogin(this.state)} className="modal-action modal-close waves-effect red btn">GO</Link>
                   </div>
                 </div>
                 {/* End of Modal */}

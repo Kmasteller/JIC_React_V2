@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var User = require('../mongooseModels/user.js')
 //bringing in the bcrypt npm module
 var bcrypt = require('bcrypt');
+
 module.exports = function (app) {
   console.log("😀  Hit /apiRoutes");
   //grabbing our sequelize models
