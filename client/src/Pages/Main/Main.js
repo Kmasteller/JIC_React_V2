@@ -44,90 +44,51 @@ class Main extends Component {
     })
   }
 
-  // const centerAlign = {
-  //   textAlign: "center"
-  //   }
-
-  // const buttonWidth = {
-  //   width: "320px"
-  //   }
-
   render() {
 
     const centerAlign = {
       textAlign: "center"
     }
 
-    const buttonWidth = {
-      width: "320px"
-    }
+  return (
 
-    return (
-
-
-      <main>
-        <div>
-          {/* Main Card */}
-          <Row>
-            <Col m={7} s={12}>
-              <Card className="card medium" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt='First Aid Kit'></CardTitle>} 
-              actions={[<Button style={buttonWidth} waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
-                <div>
-                  <br /><br />
-                  <div className="row">
-                    <div className="col s12">
-                      {/* Needs to render dynamically */}
-                      <h6><strong>{this.state.tempUser.first_name} {this.state.tempUser.last_name}</strong></h6>
-                    </div>
+    <main>
+      <div>
+        {/* Main Card */}
+        <Row>
+          <Col m={7} s={12}>
+            <Card className="card medium grey lighten-4" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt=''></CardTitle>} 
+            actions={[<Button style={buttonWidth} waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
+              <div>
+                <div className="row">
+                  <div className="col s12 h4 h6">
+                    {/* Needs to render dynamically */}
+                    <h4 class="h4"><strong>Sally Bananas</strong></h4>
+                    <h6 class="h6">"You"</h6>
                   </div>
-                  <div className="row">
-                  {/* Needs to render dynamically */}
-                    <div className="col s6">
+                </div>
+                <div className="row">
+                  <div className="col s6">
+                    {/* Needs to render dynamically */}
                       <p>DOB: 12/7/80</p>
                       <p>Height: 5' 9"</p>
                       <p>Hair: Brown</p>
-                    </div>
-                    <div className="col s6">
+                  </div>
+                  <div className="col s6">
+                    {/* Needs to render dynamically */}
                       <p>AGE: 36</p>
                       <p>Weight: 150 lbs</p>
                       <p>Eye: Brown</p>
-                    </div>
                   </div>
                 </div>
-              </Card>
-            </Col>
-          </Row>
-          {/* <div className="col s12 s7">
-            <div className="card horizontal">
-              <div className="card-image">
-                <img src="./assets/images/profile/you.JPG" alt="" />
               </div>
-              <div className="card-stacked">
-                <div className="card-content">
-                  <h5 className="your-name">JoEllen D. Giani</h5>
-                  <div className="row">
-                    <div className="col s6">
-                      <p>DOB: 12/7/80</p>
-                      <p>Height: 5' 9"</p>
-                      <p>Hair: Brown</p>
-                    </div>
-                    <div className="col s6">
-                      <p>AGE: 36</p>
-                      <p>Weight: 150 lbs</p>
-                      <p>Eye: Brown</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="card-action">
-                  <Link className="black-text text-darken-4" to="profile">YOU</Link>
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </div>
-        <Menu />
-      </main>
-    );
-  };
-}
+          </Card>
+        </Col>
+        </Row>
+      <Menu />
+      </div>
+    </main>
+  );
+};
+
 export default Main;

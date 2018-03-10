@@ -154,7 +154,7 @@ class Add extends Component {
 
           {/* 5th Card */}
             <Col m={7} s={12}>
-              <Card className='card horizontal height grey lighten-1'>
+              <Card className='card horizontal height grey lighten-1 white-text'>
                 <h5>What is your height?</h5>
                 <br />
                   <Input s={6} value={this.state.height} name="height" className="materialize-textarea" onChange={this.handleChange} />
@@ -165,7 +165,7 @@ class Add extends Component {
 
           {/* 6th Card */}
             <Col m={7} s={12}>
-              <Card className='card horizontal weight grey lighten-1'>
+              <Card className='card horizontal weight grey darken-1 white-text'>
                 <h5>What is your weight?</h5>
                 <br />
                   <Input s={6} value={this.state.weight} name="weight" className="materialize-textarea" onChange={this.handleChange} />
@@ -176,7 +176,7 @@ class Add extends Component {
 
           {/* 7th Card */}
             <Col m={7} s={12}>
-              <Card className='card horizontal hair grey lighten-1'>
+              <Card className='card horizontal hair grey darken-2 white-text'>
                 <h5>What is your hair color?</h5>
                 <br />
                   <Input s={6} value={this.state.hair} name="hair" className="materialize-textarea" onChange={this.handleChange} />
@@ -187,7 +187,7 @@ class Add extends Component {
 
           {/* 8th Card */}
             <Col m={7} s={12}>
-              <Card className='card horizontal eyes grey lighten-1'>
+              <Card className='card horizontal eyes grey darken-3 white-text'>
                 <h5>What is your eye color?</h5>
                 <br />
                   <Input s={6} value={this.state.eyes} name="eyes" className="materialize-textarea" onChange={this.handleChange} />
