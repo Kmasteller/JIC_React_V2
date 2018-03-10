@@ -61,7 +61,7 @@ class Home extends Component {
       <div className="card z-depth-0">
         <div className="card-image waves-effect waves-block waves-light">
           <br />
-          <img className src="../../../assets/images/logos/JICslow.gif" alt="" />
+          <img src="../../../assets/images/logos/JICslow.gif" alt="" />
           <br />
         </div>
       <div className="card-content-landing" align="center">
@@ -89,13 +89,13 @@ class Home extends Component {
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="email" name="logemail" id="logemail" value={this.state.logemail} onChange={this.handleChange} />
+                            <input className="validate" type="email" name="logemail" value={this.state.logemail} onChange={this.handleChange} />
                               <label htmlFor="email">Enter your email</label>
                           </div>
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="password" name="logpassword" id="logpassword" value={this.state.logpassword} onChange={this.handleChange} />
+                            <input className="validate" type="password" name="logpassword" value={this.state.logpassword} onChange={this.handleChange} />
                               <label htmlFor="password">Enter your password</label></div>
                               <label style={{ float: 'right' }}>
                             <a className="pink-text" href="#!"><b>Forgot Password?</b></a>
@@ -104,7 +104,8 @@ class Home extends Component {
                       </form>
                   </div>
                   <div className="modal-footer">
-                    <a href="main" className="modal-action modal-close waves-effect red btn">Go</a>
+                    {/* <a href="main" className="modal-action modal-close waves-effect red btn">Go</a> */}
+                    <Link to="/" onClick={() => this.props.handleLogin(this.state)} className="modal-action modal-close waves-effect red btn">GO</Link>
                   </div>
                 </div>
                 {/* End of Modal */}
@@ -173,7 +174,7 @@ class Home extends Component {
                         <div className="row">
                           <div className="col s12">
 
-                          <Link to={`/user/${this.state.email}/main`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          <Link to={`/user/${this.state.email}/main`} onClick={() => this.props.handleSignup(this.state)} className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
                           <Route path="/user/:email/main" component={Main} />
 
                           {/* <Link to={`/user/${this.state.email}/main`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
@@ -191,7 +192,7 @@ class Home extends Component {
                 </div>
               </div>
               <br />
-              <img className="landing-logo" src width="80%" height="" alt="" />
+              <img className="landing-logo" width="80%" height="" alt="" />
             </div>
       </div>
       </div>

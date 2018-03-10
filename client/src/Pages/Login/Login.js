@@ -30,7 +30,7 @@ class Login extends Component {
             <br />
           </div>
           <div className="card-content-landing" align="center">
-            <span className="welcome"><h4 align="center">...<span id="typed" /></h4></span>
+            <span className="welcome"><h4 align="center">...<span /></h4></span>
             <br />
             <div className="row">
               <div>
@@ -38,14 +38,13 @@ class Login extends Component {
                 <br />
                 <Input placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} />
                 
-                <Link to="/login" onClick={() => this.props.handleLogin(this.state)} id="login" className="modal-action modal-close waves-effect red btn">Login</Link>
+                <Link to="/" onClick={() => this.props.handleLogin(this.state)} className="modal-action modal-close waves-effect red btn">Login</Link>
 
               </div>
             </div>
           </div>
         </div>
-
-        </main>
+      </main>
     );
   };
 };
