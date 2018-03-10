@@ -106,19 +106,28 @@ class Add extends Component {
                 <Link to="#!" className="modal-action modal-close waves-effect red btn">Lets do it!</Link>
               </div>
             </div>
+          </div>
           {/* End of Informational Modal Structure - Opens on Page Load */}
           
           {/* Main Card Area */}
-            {/* <div className="col s12 s7"> */}
             <Col m={7} s={12}>
-              <Card className='card horizontal profile-pic' header={<CardTitle image= '../../../assets/images/addform/addformperson.jpg' />}>
-                Use a clear, well lit photo of your face.
-                <br />
-                <Button waves='light' className='red btn' icon='photo_camera'/>
+              <Card className='card horizontal'>
+              <p>Use a clear, well lit photo of your face.</p>
+              <br />
+                <Button waves='light' className='red btn left' icon='photo_camera'/>
                 <Input s={6} name="photo" value={this.state.photo} onChange={this.handleChange} />
                 
               </Card>
             </Col>
+
+            {/*<Col m={7} s={12}>
+              <Card horizontal>
+                <p>I am a very simple card. I am good at containing small bits of information</p>
+              </Card>
+            </Col>*/}
+            
+        
+          
             {/* <div className="card horizontal profile-pic">
               <div className="card-image">
                 <img id="photoPreview" src="../../../assets/images/addform/addformperson.jpg" alt=""/>
@@ -153,7 +162,6 @@ class Add extends Component {
               <br />
               
               <Input s={6} placeholder='01/01/1900' name="address" value={this.state.birthdate} className="datepicker" onChange={this.handleChange} />
-               
             </Card>
           </Col>
           {/* <div className="col s12 s7">
@@ -363,7 +371,7 @@ class Add extends Component {
             <li class="waves-effect waves-light"><LINK to="tour"><i class="material-icons">play_arrow</i></LINK></li>
             </ul>
         </div> */}
-        </div>
+        
       </form>
     </main>
 
