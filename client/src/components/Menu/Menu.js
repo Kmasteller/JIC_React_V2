@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-
-import { Button, Icon, SideNav, SideNavItem } from 'react-materialize';
-import axios from 'axios';
-
+import { Button} from 'react-materialize';
 
 class Menu extends Component {
   constructor (props) {
@@ -22,34 +19,17 @@ class Menu extends Component {
     })
   }
 
-  userLogOut = () => {
-    axios.get("/api/logout").then((res) => {
-      console.log(res)
-      this.setState({ user: res.data });
-    })
-  }
-
   render() {
 
     return (
 
-      <main>
-        <SideNav
-            trigger={<Button className='btn-floating pulse btn-large red' 
-            style={bottomFix} 
-            waves='light' 
-            onClick={this.toggleHamburger}>
-            <Icon>menu</Icon>
-            </Button>}         
-            >
-              <SideNavItem href='main' icon='home'>Home Page</SideNavItem>
-              <SideNavItem href='addother' icon='add'>Add a Card</SideNavItem>
-              <SideNavItem href='resources' icon='format_list_bulleted'>Resources</SideNavItem>
-              <SideNavItem href='tour' icon='play_arrow'>Take a Tour</SideNavItem>
-              <SideNavItem onClick={this.userLogOut} href='/' icon='remove_circle_outline'>Logout</SideNavItem>
-              {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
-        </SideNav>
-      </main>
+
+        <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: '45px', right: '24px'}}>
+          <Button floating icon='home' href='/main' className='red'/>
+          <Button floating icon='add' href='/addother' className='red'/>
+          <Button floating icon='format_list_bulleted' href='/resources' className='red'/>
+          <Button floating icon='play_arrow' href='/tour' className='red'/>
+        </Button>
 
     );
   }
