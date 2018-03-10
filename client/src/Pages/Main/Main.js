@@ -50,9 +50,9 @@ class Main extends Component {
       textAlign: "center"
     }
  
-    const buttonWidth = {
-      width: "320px"
-    }
+    // const buttonWidth = {
+    //   width: "320px"
+    // }
 
   return (
 
