@@ -105,7 +105,11 @@ i.icon-black {
 }
 .modal{
     /* width:  !important; */
+<<<<<<< HEAD
+    height: 33% !important;
+=======
     height: 35% !important;
+>>>>>>> 01a5ff62ff6b9810bccbb91c1045c6dfcf293047
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
