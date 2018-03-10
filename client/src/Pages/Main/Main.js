@@ -49,6 +49,10 @@ class Main extends Component {
     const centerAlign = {
       textAlign: "center"
     }
+ 
+    const buttonWidth = {
+      width: "320px"
+    }
 
   return (
 
@@ -90,5 +94,5 @@ class Main extends Component {
     </main>
   );
 };
-
+}
 export default Main;
