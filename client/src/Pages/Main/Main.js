@@ -89,7 +89,7 @@ class Main extends Component {
             </Card>
           </Col>
         </Row>
-      <Menu />
+      <Menu handleLogout={this.props.handleLogout}/>
     </div>
   </main>
   );

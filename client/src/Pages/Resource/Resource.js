@@ -85,7 +85,7 @@ const Resource = (props) => {
                 </Col>
             </Row>
   
-                    <Menu />
+            <Menu handleLogout={props.handleLogout}/>
         </div>
 
     </main>
