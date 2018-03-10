@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import { Link } from "react-router-dom";
 // import FooterMenu from '../../components/Footer-menu';
 import Menu from '../../components/Menu';
-import { Button, CardTitle, Card , Col } from 'react-materialize';
+import { Button, Card , Col } from 'react-materialize';
 import axios from 'axios';
 
 class Add extends Component {

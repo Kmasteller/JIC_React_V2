@@ -58,7 +58,7 @@ class Main extends Component {
         <Row>
           <Col m={7} s={12}>
             <Card className="card medium grey lighten-4" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt=''></CardTitle>} 
-            actions={[<Button style={buttonWidth} waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
+            actions={[<Button waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
               <div>
                 <div className="row">
                   <div className="col s12 h4 h6">
@@ -90,5 +90,5 @@ class Main extends Component {
     </main>
   );
 };
-
+}
 export default Main;
