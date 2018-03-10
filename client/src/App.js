@@ -80,9 +80,7 @@ class App extends Component {
           <Switch>  
             <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} /> }/>
             <Route exact path="/tour" component={Tour} />
-            <Route exact path="/add" component={Add} />
             <Route exact path="/main" component={Main} />
-            <Route exact path="/addother" component={Main} />
             <Route exact path="/resource" component={Resource} />
             <Route path="/user/:email" render={(props) => {
                return <Profile {...props} />
@@ -92,13 +90,14 @@ class App extends Component {
             if you want to lock down user profile route to only show if they are logged in
             comment out the route above and uncomment the code below on lines 71
              */}
-            {/* <Route path="/user/:username" render={(props) => {
+            <Route path="/add" render={(props) => {
               console.log(this.state.user.LoggedIn, "this is in path for /profiles")
               return this.state.user.loggedIn ? (
-                <Profile {...props}/> 
+                <Add {...props} handleAdd={this.userDidAdd} />
               ) : (
-                  <Redirect to="/login"/>
+                  <Redirect to="/"/>
                 )
+
             }} /> */}
             <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
@@ -106,6 +105,7 @@ class App extends Component {
             <Route exact path="/login" render={() => (
               <Login handleLogin={this.userDidLogin} />
             )} />
+
             <Route exact path="/add" render={(props) => (
               <Add {...props} handleAdd={this.userDidAdd} />
             )} />

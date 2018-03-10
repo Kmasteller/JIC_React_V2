@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Button} from 'react-materialize';
+import { Button } from 'react-materialize';
+import axios from 'axios';
+
 
 class Menu extends Component {
   constructor (props) {
@@ -23,14 +25,15 @@ class Menu extends Component {
 
     return (
 
-
-        <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: '45px', right: '24px'}}>
-          <Button floating icon='home' href='/main' className='red'/>
-          <Button floating icon='add' href='/addother' className='red'/>
-          <Button floating icon='format_list_bulleted' href='/resources' className='red'/>
-          <Button floating icon='play_arrow' href='/tour' className='red'/>
-        </Button>
-
+        <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: "45bs", right: "24px"}}>
+                    
+              <Button floating href='main' icon='home' className='red' />
+              <Button floating href='addother' icon='add' className='red' />
+              <Button floating href='resources' icon='format_list_bulleted' className='red' />
+              <Button floating href='tour' icon='play_arrow' className='red' />
+              <Button floating onClick={this.userLogOut} href='/' icon='remove_circle_outline' className='red' />
+              {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
+         </Button> 
     );
   }
 }
