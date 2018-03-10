@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-
+import { Route, Link } from "react-router-dom";
+import Update from '../../components/Update';
+import axios from 'axios';
 class Home extends Component {
   state = {
     logemail: '',
@@ -11,6 +12,36 @@ class Home extends Component {
     email: ''
   }
 
+  // state = {
+  //   tempUser: {},
+  //   user: {
+  //     loggedIn: false,
+  //     isAdmin: false,
+  //     currentUser: {
+  //       id: null,
+  //       logemail: '',
+  //       logpassword: '',
+  //       password: '',
+  //       first_name: '',
+  //       last_name: '',
+  //       email: ''
+  //     }
+  //   }
+  // }
+
+  checkLogin = () => {
+    axios.get("/api/session").then((res) => {
+      console.log(this.state, "this is checkloging state")
+      console.log(res)
+      this.setState({ user: res.data });
+      console.log(this.state)
+    })
+  }
+  // componentWillMount() {
+  //   this.props.checkLogin()
+  // }
+
+
   handleChange = (event) => {
     console.log(event.target.value);
     const { name, value } = event.target;
@@ -18,6 +49,9 @@ class Home extends Component {
       [name]: value
     });
   }
+
+
+
   render() {
 
   return (
@@ -138,7 +172,14 @@ class Home extends Component {
                         {/* submit button */}
                         <div className="row">
                           <div className="col s12">
-                            <Link to="add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+
+
+                          <Link to="add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          
+
+                          
+                          {/* <Link to={`/user/${this.state.email}/update`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          <Route path="/user/:email/update" component={Update} /> */}
                           </div>
                         </div>
                         {/* end submit button */}
