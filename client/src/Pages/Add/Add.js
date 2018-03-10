@@ -30,22 +30,6 @@ class Add extends Component {
 
 
 
-
-  // constructor(props){
-  //   super(props)
-
-  //     this.state = {
-  //     photo: "",
-  //     birthdate: "",
-  //     address: "",
-  //     phone: "",
-  //     height: "",
-  //     weight: "",
-  //     hair: "",
-  //     eyes: ""
-  //   }
-  // }
-
   checkLogin = () => {
     axios.get("/api/session").then((res) => {
       console.log(this.state, "this is checkloging state")
@@ -78,13 +62,6 @@ class Add extends Component {
       [name]: value
     });
   }
-//   userDidAdd = (userData) => {
-//   console.log(userData)
-//   // axios.post("/api/add", userData).then((res) => {
-//   //   console.log(res)
-//   // })
-// }
-
   render() {
     return (
       <main>
