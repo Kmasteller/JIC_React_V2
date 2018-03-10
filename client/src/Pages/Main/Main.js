@@ -1,20 +1,57 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import { Link } from "react-router-dom";
 import { Button, CardTitle, Card, Row, Col } from 'react-materialize';
 import Menu from '../../components/Menu';
+import axios from 'axios';
 
-const Main = (props) => {
-  console.log(props)
+class Main extends Component {
 
-  const centerAlign = {
-    textAlign: "center"
+
+  state = {
+    tempUser: {},
+    user: {
+      loggedIn: false,
+      isAdmin: false,
+      currentUser: {
+        first_name: '',
+        last_name: '',
+        email: ''
+      }
     }
+  }
 
-  const buttonWidth = {
-    width: "320px"
+
+  checkLogin = () => {
+    axios.get("/api/session").then((res) => {
+      console.log(this.state, "this is checkloging state")
+      console.log(res)
+      this.setState({ user: res.data });
+      console.log(this.state)
+    })
+  }
+
+  componentWillMount() {
+    console.log(this.props, "props from profile")
+    console.log(this.state, "props from state")
+    this.checkLogin()
+    axios.get(`/api/profile/${this.props.match.params.email}`).then((response) => {
+      console.log(response);
+      this.setState({
+        tempUser: response.data
+      });
+      console.log(this.props, "props from profile")
+      console.log(this.state, "props from state")
+    })
+  }
+
+  render() {
+
+    const centerAlign = {
+      textAlign: "center"
     }
 
   return (
+
     <main>
       <div>
         {/* Main Card */}
@@ -45,11 +82,11 @@ const Main = (props) => {
                   </div>
                 </div>
               </div>
-            </Card>
-          </Col>
+          </Card>
+        </Col>
         </Row>
-      </div>
       <Menu />
+      </div>
     </main>
   );
 };

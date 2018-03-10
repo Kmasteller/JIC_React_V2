@@ -4,28 +4,67 @@ import Input from '../../components/Input';
 import { Link } from "react-router-dom";
 // import FooterMenu from '../../components/Footer-menu';
 import Menu from '../../components/Menu';
-import { Button, Card , Col } from 'react-materialize';
+import { Button, CardTitle, Card , Col } from 'react-materialize';
+import axios from 'axios';
 
 class Add extends Component {
+  
+  state = {
+    tempUser: {},
+    user: {
+      loggedIn: false,
+      isAdmin: false,
+      currentUser: {
+        photo: "",
+        birthdate: "",
+        address: "",
+        phone: "",
+        height: "",
+        weight: "",
+        hair: "",
+        eyes: ""
+      }
 
-  constructor(props){
-    super(props)
-
-      this.state = {
-      photo: "",
-      birthdate: "",
-      address: "",
-      phone: "",
-      height: "",
-      weight: "",
-      hair: "",
-      eyes: ""
     }
   }
 
- componentWillMount () {
-   console.log(this.props, "this is props add.js componentWillMount")
- }
+  // constructor(props){
+  //   super(props)
+
+  //     this.state = {
+  //     photo: "",
+  //     birthdate: "",
+  //     address: "",
+  //     phone: "",
+  //     height: "",
+  //     weight: "",
+  //     hair: "",
+  //     eyes: ""
+  //   }
+  // }
+
+  checkLogin = () => {
+    axios.get("/api/session").then((res) => {
+      console.log(this.state, "this is checkloging state")
+      console.log(res)
+      this.setState({ user: res.data });
+      console.log(this.state)
+    })
+  }
+
+  componentWillMount() {
+    console.log(this.props, "props from profile")
+    console.log(this.state, "props from state")
+    this.checkLogin()
+    axios.get(`/api/profile/${this.props.match.params.email}`).then((response) => {
+      console.log(response);
+      this.setState({
+        tempUser: response.data
+      });
+      console.log(this.props, "props from profile")
+      console.log(this.state, "props from state")
+    })
+  }
 
   handleChange = (event) => {
     const { name, value } = event.target;
