@@ -154,6 +154,8 @@ module.exports = function (app) {
       res.json(userObj)
     })
   });
+
+
 //   //update profile route
 //   app.put('/api/update/:username', function (req, res, next) {
 //     req.session.user.currentUser = req.body

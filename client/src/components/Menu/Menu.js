@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import { Button, Icon, SideNav, SideNavItem } from 'react-materialize';
 import axios from 'axios';
+
 
 class Menu extends Component {
   constructor (props) {
@@ -29,13 +31,8 @@ class Menu extends Component {
 
   render() {
 
-    const bottomFix = {
-      position: "fixed",
-      bottom: "0",
-      right: "0"
-      }
-
     return (
+
       <main>
         <SideNav
             trigger={<Button className='btn-floating pulse btn-large red' 
@@ -53,6 +50,7 @@ class Menu extends Component {
               {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
         </SideNav>
       </main>
+
     );
   }
 }
