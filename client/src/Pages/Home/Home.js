@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
-import Update from '../../components/Update';
+import Main from '../Main';
 import axios from 'axios';
 class Home extends Component {
   state = {
@@ -173,9 +173,11 @@ class Home extends Component {
                         <div className="row">
                           <div className="col s12">
 
+                          <Link to={`/user/${this.state.email}/main`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          <Route path="/user/:email/main" component={Main} />
 
-                          <Link to="add" onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
-                          
+                          {/* <Link to={`/user/${this.state.email}/main`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
+                          <Route path="/user/:email/main" component={Main} /> */}
 
                           
                           {/* <Link to={`/user/${this.state.email}/update`} onClick={() => this.props.handleSignup(this.state)} id="new-sign-up" className="modal-action modal-close waves-effect red btn">Sign me up!</Link>
