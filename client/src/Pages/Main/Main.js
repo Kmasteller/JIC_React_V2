@@ -86,12 +86,12 @@ class Main extends Component {
                   </div>
                 </div>
               </div>
-          </Card>
-        </Col>
+            </Card>
+          </Col>
         </Row>
       <Menu />
-      </div>
-    </main>
+    </div>
+  </main>
   );
 };
 }
