@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from 'react-materialize';
 import axios from 'axios';
 
+
 class Menu extends Component {
   constructor (props) {
     super(props);
@@ -17,13 +18,6 @@ class Menu extends Component {
     let setDisplay = !this.state.display;
     this.setState({
       display: setDisplay
-    })
-  }
-
-  userLogOut = () => {
-    axios.get("/api/logout").then((res) => {
-      console.log(res)
-      this.setState({ user: res.data });
     })
   }
 

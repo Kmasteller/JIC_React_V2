@@ -97,24 +97,21 @@ class App extends Component {
               ) : (
                   <Redirect to="/"/>
                 )
-            }} />
-             <Route path="/addOther" render={(props) => {
-              console.log(this.state.user.LoggedIn, "this is in path for /profiles")
-              return this.state.user.loggedIn ? (
-                <Add {...props} handleAdd={this.userDidAdd} />
-              ) : (
-                  <Redirect to="/"/>
-                )
-            }} />
-            <Route exact path="/api/logout" render={() => (
+
+            }} /> */}
+            <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
             )} />
             <Route exact path="/login" render={() => (
               <Login handleLogin={this.userDidLogin} />
             )} />
-            {/* <Route exact path="/logout" render={() => (
+
+            <Route exact path="/add" render={(props) => (
+              <Add {...props} handleAdd={this.userDidAdd} />
+            )} />
+            <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
-            )} /> */}
+            )} />
             <Route exact path="/admin" render={(props) => {
               console.log(props, "this is match")
               console.log(this.state.user.isAdmin, "this is in path for /profiles")

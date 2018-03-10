@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var User = require('../mongooseModels/user.js')
 //bringing in the bcrypt npm module
 var bcrypt = require('bcrypt');
-
 module.exports = function (app) {
   console.log("😀  Hit /apiRoutes");
   //grabbing our sequelize models
@@ -161,6 +160,8 @@ module.exports = function (app) {
       res.json(userObj)
     })
   });
+
+
 //   //update profile route
 //   app.put('/api/update/:username', function (req, res, next) {
 //     req.session.user.currentUser = req.body

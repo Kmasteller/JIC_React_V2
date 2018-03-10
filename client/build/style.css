@@ -39,7 +39,6 @@ i.icon-black {
     width: 390px;
     max-width: 400px !important;
     /* left: 50% !important; */
-    border: 0px !important;
 }
 .welcome{
     font-size: 24px;
@@ -95,23 +94,12 @@ i.icon-black {
     padding-bottom: 2px !important;
     padding-top: 2px !important;
     padding-left: 2px !important;
-    padding-right: 2px !important;
 }
 .materialize-textarea{
     margin-bottom: 0px !important;
 }
 .collapsible-body{
     padding-top: 5px !important;
-}
-.modal{
-    /* width:  !important; */
-    height: 35% !important;
-}
-.h4{
-    margin:1px !important;
-}
-.h6{
-    margin:1px !important;
 }
 
 
