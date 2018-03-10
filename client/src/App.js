@@ -100,7 +100,7 @@ class App extends Component {
                   <Redirect to="/login"/>
                 )
             }} /> */}
-            <Route exact path="/api/logout" render={() => (
+            <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
             )} />
             <Route exact path="/login" render={() => (
@@ -109,9 +109,9 @@ class App extends Component {
             <Route exact path="/add" render={(props) => (
               <Add {...props} handleAdd={this.userDidAdd} />
             )} />
-            {/* <Route exact path="/logout" render={() => (
+            <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
-            )} /> */}
+            )} />
             <Route exact path="/admin" render={(props) => {
               console.log(props, "this is match")
               console.log(this.state.user.isAdmin, "this is in path for /profiles")

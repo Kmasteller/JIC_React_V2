@@ -104,7 +104,7 @@ class Home extends Component {
                       </form>
                   </div>
                   <div className="modal-footer">
-                    <Link to="/main" onClick={() => this.props.handleLogin(this.state)} className="modal-action modal-close waves-effect red btn">GO</Link>
+                    <a href="main" className="modal-action modal-close waves-effect red btn">Go</a>
                   </div>
                 </div>
                 {/* End of Modal */}
