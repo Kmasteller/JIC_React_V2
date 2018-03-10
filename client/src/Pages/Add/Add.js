@@ -28,6 +28,9 @@ class Add extends Component {
     }
   }
 
+
+
+
   // constructor(props){
   //   super(props)
 
@@ -56,7 +59,7 @@ class Add extends Component {
     console.log(this.props, "props from profile")
     console.log(this.state, "props from state")
     this.checkLogin()
-    axios.get(`/api/profile/${this.props.match.params.email}`).then((response) => {
+    axios.get(`/api/profile/${this.props.match.params.id}`).then((response) => {
       console.log(response);
       this.setState({
         tempUser: response.data
@@ -65,6 +68,9 @@ class Add extends Component {
       console.log(this.state, "props from state")
     })
   }
+
+
+
 
   handleChange = (event) => {
     const { name, value } = event.target;
