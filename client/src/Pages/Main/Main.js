@@ -20,7 +20,7 @@ const Main = (props) => {
         {/* Main Card */}
         <Row>
           <Col m={7} s={12}>
-            <Card className="card medium grey lighten-5" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt=''></CardTitle>} 
+            <Card className="card medium grey lighten-4" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt=''></CardTitle>} 
             actions={[<Button style={buttonWidth} waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
               <div>
                 <div className="row">
