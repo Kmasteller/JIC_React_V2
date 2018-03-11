@@ -31,6 +31,7 @@ class Menu extends Component {
               <Link to='resource'><Button floating icon='format_list_bulleted' className='red' /></Link>
               <Link to='tour'><Button floating icon='play_arrow' className='red' /></Link>
               <Link to='/'><Button floating onClick={this.props.handleLogout} icon='remove_circle_outline' className='red' /></Link>
+
               {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
          </Button> 
     );
