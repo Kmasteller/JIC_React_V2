@@ -41,7 +41,7 @@ class Profile extends Component {
     //   this.props.checkLogin()
     // }
     
-    componentWillMount() {
+    componentDidMount() {
       console.log(this.props, "props from profile")
       console.log(this.state, "props from state")
       this.checkLogin()
@@ -59,7 +59,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav userInfo={this.state.user}/>
         <div className="card" style={this.cardStyle}>
           <img className="card-img-top" src={this.state.tempUser.profilePic} alt="" />
             <div className="card-body">
