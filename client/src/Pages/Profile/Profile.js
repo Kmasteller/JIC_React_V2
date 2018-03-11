@@ -17,14 +17,6 @@ class Profile extends Component {
           last_name: '',
           email: '',
           profilePic: null,
-          // photo: '',
-          // birthdate: '',
-          // address: '',
-          // phone: '',
-          // height: '',
-          // weight: '',
-          // hair: '',
-          // eyes: ''
         }
       }
     }
@@ -37,10 +29,6 @@ class Profile extends Component {
       console.log(this.state)
     })
   }
-    // componentWillMount() {
-    //   this.props.checkLogin()
-    // }
-    
     componentWillMount() {
       console.log(this.props, "props from profile")
       console.log(this.state, "props from state")
@@ -55,7 +43,7 @@ class Profile extends Component {
       })
     }
     cardStyle = { width: "18rem"}
-    
+
   render() {
     return (
       <div>
@@ -66,12 +54,12 @@ class Profile extends Component {
               <h5 className="card-title">{this.state.tempUser.email}</h5>
               <p className="card-text">Your Users Comments</p>
             {this.state.user.currentUser.email === this.state.tempUser.email &&
-            <Link 
-            to={`/user/${this.props.match.params.email}/update`} 
+            <Link
+            to={`/user/${this.props.match.params.email}/update`}
             className="btn btn-primary">Update</Link>}
             <Route path="/user/:email/update" component={Update} />
             </div>
-            
+
         </div>
       </div>
     );
