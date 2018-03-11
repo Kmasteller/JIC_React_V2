@@ -11,8 +11,6 @@ const Tour = (props) => {
     textAlign: "center"
       }
 
-
-
       return (
             <main>
 
@@ -96,7 +94,7 @@ const Tour = (props) => {
             </ul>
         </div> */}
       
-            <Menu />
+            <Menu handleLogout={props.handleLogout}/>
             </main>
       );
 };

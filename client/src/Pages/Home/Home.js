@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import Main from '../Main';
-import axios from 'axios';
+// import axios from 'axios';
 class Home extends Component {
   state = {
-    logemail: '',
-    logpassword: '',
+    email: '',
     password: '',
     first_name: '',
-    last_name: '',
-    email: ''
+    last_name: ''
   }
 
   // state = {
@@ -29,14 +27,14 @@ class Home extends Component {
   //   }
   // }
 
-  checkLogin = () => {
-    axios.get("/api/session").then((res) => {
-      console.log(this.state, "this is checkloging state")
-      console.log(res)
-      this.setState({ user: res.data });
-      console.log(this.state)
-    })
-  }
+  // checkLogin = () => {
+  //   axios.get("/api/session").then((res) => {
+  //     console.log(this.state, "this is checkloging state")
+  //     console.log(res)
+  //     this.setState({ user: res.data });
+  //     console.log(this.state)
+  //   })
+  // }
   // componentWillMount() {
   //   this.props.checkLogin()
   // }
@@ -89,13 +87,13 @@ class Home extends Component {
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="email" name="logemail" value={this.state.logemail} onChange={this.handleChange} />
+                            <input className="validate" type="email" name="email" value={this.state.email} onChange={this.handleChange} />
                               <label htmlFor="email">Enter your email</label>
                           </div>
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input className="validate" type="password" name="logpassword" value={this.state.logpassword} onChange={this.handleChange} />
+                            <input className="validate" type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                               <label htmlFor="password">Enter your password</label></div>
                               <label style={{ float: 'right' }}>
                             <a className="pink-text" href="#!"><b>Forgot Password?</b></a>
@@ -105,7 +103,7 @@ class Home extends Component {
                   </div>
                   <div className="modal-footer">
                     {/* <a href="main" className="modal-action modal-close waves-effect red btn">Go</a> */}
-                    <Link to="/" onClick={() => this.props.handleLogin(this.state)} className="modal-action modal-close waves-effect red btn">GO</Link>
+                    <Link to="/main" onClick={() => this.props.handleLogin({email: this.state.email, password: this.state.password})} className="modal-action modal-close waves-effect red btn">GO</Link>
                   </div>
                 </div>
                 {/* End of Modal */}

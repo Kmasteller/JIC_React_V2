@@ -30,7 +30,7 @@ class Main extends Component {
     })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     console.log(this.props, "props from profile")
     console.log(this.state, "props from state")
     this.checkLogin()
@@ -89,7 +89,7 @@ class Main extends Component {
             </Card>
           </Col>
         </Row>
-      <Menu />
+      <Menu handleLogout={this.props.handleLogout}/>
     </div>
   </main>
   );

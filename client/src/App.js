@@ -49,13 +49,13 @@ class App extends Component {
     })
   }
 
-    userDidAdd = (userData) => {
-          console.log(userData)
-          axios.post("/api/add", userData).then((res) => {
-            console.log(res)
-            this.checkLogin()
-          })
-        }
+  userDidAdd = (userData) => {
+    console.log(userData)
+    axios.post("/api/add", userData).then((res) => {
+      console.log(res)
+      this.checkLogin()
+    })
+  }
 
   userDidSignup = (userData) => {
     console.log(userData, "userdata from userdidsignup")
@@ -78,11 +78,12 @@ class App extends Component {
         <div>
           {/* <Nav userInfo={this.state.user} logout={this.userLogOut}/> */}
           <Switch>  
-            <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} /> }/>
-            <Route exact path="/tour" component={Tour} />
-            <Route exact path="/main" component={Main} />
-            <Route exact path="/add" component={Add} />
-            <Route exact path="/resource" component={Resource} />
+            <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} handleLogin={this.userDidLogin} /> }/>
+            <Route exact path="/tour" render={() => <Tour handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/main" render={(props) => <Main {...props} handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/add" render={() => <Add handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/resource" render={() => <Resource handleLogout={this.userLogOut} /> }/>
+    
             <Route path="/user/:email" render={(props) => {
                return <Profile {...props} />
             }} />

@@ -30,8 +30,8 @@ class Menu extends Component {
               <Link to='add'><Button floating icon='add' className='red' /></Link>
               <Link to='resource'><Button floating icon='format_list_bulleted' className='red' /></Link>
               <Link to='tour'><Button floating icon='play_arrow' className='red' /></Link>
-              <Link to='/'><Button floating onClick={this.userLogOut} icon='remove_circle_outline' className='red' /></Link>
-              {/* {!props.userInfo.loggedIn ? <Link to='/login'><Button floating onClick={this.userLoggedIn} icon='remove_circle_outline' className='red' /></Link> : <Link to='/'><Button floating onClick={props.logout} icon='remove_circle_outline' className='red' /></Link>} */}
+              <Link to='/'><Button floating onClick={this.props.handleLogout} icon='remove_circle_outline' className='red' /></Link>
+
               {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
          </Button> 
     );
