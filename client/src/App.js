@@ -49,13 +49,13 @@ class App extends Component {
     })
   }
 
-    userDidAdd = (userData) => {
-          console.log(userData)
-          axios.post("/api/add", userData).then((res) => {
-            console.log(res)
-            this.checkLogin()
-          })
-        }
+  userDidAdd = (userData) => {
+    console.log(userData)
+    axios.post("/api/add", userData).then((res) => {
+      console.log(res)
+      this.checkLogin()
+    })
+  }
 
   userDidSignup = (userData) => {
     console.log(userData, "userdata from userdidsignup")
@@ -78,12 +78,12 @@ class App extends Component {
         <div>
           {/* <Nav userInfo={this.state.user} logout={this.userLogOut}/> */}
           <Switch>  
-            <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} /> }/>
-            <Route exact path="/tour" component={Tour} />
-            <Route exact path="/add" component={Add} />
-            <Route exact path="/main" component={Main} />
-            <Route exact path="/addother" component={Main} />
-            <Route exact path="/resource" component={Resource} />
+            <Route exact path="/" render={() => <Home handleSignup={this.userDidSignup} handleLogin={this.userDidLogin} /> }/>
+            <Route exact path="/tour" render={() => <Tour handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/main" render={(props) => <Main {...props} handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/add" render={() => <Add handleLogout={this.userLogOut} /> }/>
+            <Route exact path="/resource" render={() => <Resource handleLogout={this.userLogOut} /> }/>
+    
             <Route path="/user/:email" render={(props) => {
                return <Profile {...props} />
             }} />
@@ -92,13 +92,14 @@ class App extends Component {
             if you want to lock down user profile route to only show if they are logged in
             comment out the route above and uncomment the code below on lines 71
              */}
-            {/* <Route path="/user/:username" render={(props) => {
+            {/* <Route path="/add" render={(props) => {
               console.log(this.state.user.LoggedIn, "this is in path for /profiles")
               return this.state.user.loggedIn ? (
-                <Profile {...props}/> 
+                <Add {...props} handleAdd={this.userDidAdd} />
               ) : (
-                  <Redirect to="/login"/>
+                  <Redirect to="/"/>
                 )
+
             }} /> */}
             <Route exact path="/logout" render={() => (
               <button onClick={this.userLogOut}> logOut</button>
@@ -106,6 +107,7 @@ class App extends Component {
             <Route exact path="/login" render={() => (
               <Login handleLogin={this.userDidLogin} />
             )} />
+
             <Route exact path="/add" render={(props) => (
               <Add {...props} handleAdd={this.userDidAdd} />
             )} />

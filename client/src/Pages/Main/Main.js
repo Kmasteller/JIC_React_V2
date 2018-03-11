@@ -30,7 +30,7 @@ class Main extends Component {
     })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     console.log(this.props, "props from profile")
     console.log(this.state, "props from state")
     this.checkLogin()
@@ -49,6 +49,10 @@ class Main extends Component {
     const centerAlign = {
       textAlign: "center"
     }
+ 
+    // const buttonWidth = {
+    //   width: "320px"
+    // }
 
   return (
 
@@ -82,12 +86,12 @@ class Main extends Component {
                   </div>
                 </div>
               </div>
-          </Card>
-        </Col>
+            </Card>
+          </Col>
         </Row>
-      <Menu />
-      </div>
-    </main>
+      <Menu handleLogout={this.props.handleLogout}/>
+    </div>
+  </main>
   );
 };
 }

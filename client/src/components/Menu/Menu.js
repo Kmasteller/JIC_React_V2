@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button} from 'react-materialize';
+import { Button } from 'react-materialize';
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
   constructor (props) {
@@ -23,14 +24,16 @@ class Menu extends Component {
 
     return (
 
+        <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: "45bs", right: "24px"}}>
+                    
+              <Link to='/'><Button floating icon='home' className='red' /></Link>
+              <Link to='add'><Button floating icon='add' className='red' /></Link>
+              <Link to='resource'><Button floating icon='format_list_bulleted' className='red' /></Link>
+              <Link to='tour'><Button floating icon='play_arrow' className='red' /></Link>
+              <Link to='/'><Button floating onClick={this.props.handleLogout} icon='remove_circle_outline' className='red' /></Link>
 
-        <Button floating fab='vertical' icon='menu' className='red' large style={{bottom: '45px', right: '24px'}}>
-          <Button floating icon='home' href='/main' className='red'/>
-          <Button floating icon='add' href='/addother' className='red'/>
-          <Button floating icon='format_list_bulleted' href='/resources' className='red'/>
-          <Button floating icon='play_arrow' href='/tour' className='red'/>
-        </Button>
-
+              {/* <SideNavItem onClick={this.toggleHamburger} icon='arrow_drop_down'>Close Menu</SideNavItem> */}
+         </Button> 
     );
   }
 }
