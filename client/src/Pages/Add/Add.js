@@ -24,7 +24,6 @@ class Add extends Component {
         hair: "",
         eyes: ""
       }
-
     }
   }
 

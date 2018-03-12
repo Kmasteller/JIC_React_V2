@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Update from '../../components/Update';
 import axios from 'axios';
-import Nav from '../../components/Nav';
+// import Nav from '../../components/Nav';
+import { Card, CardTitle, Col, Row, Button } from 'react-materialize';
+import Menu from '../../components/Menu';
 
 class Profile extends Component {
 
@@ -54,26 +56,51 @@ class Profile extends Component {
         console.log(this.state, "props from state")
       })
     }
-    cardStyle = { width: "18rem"}
     
   render() {
+
+    const centerAlign = {
+      textAlign: "center"
+    }
+
     return (
+    <main> 
       <div>
-        <Nav userInfo={this.state.user}/>
-        <div className="card" style={this.cardStyle}>
-          <img className="card-img-top" src={this.state.tempUser.profilePic} alt="" />
-            <div className="card-body">
-              <h5 className="card-title">{this.state.tempUser.email}</h5>
-              <p className="card-text">Your Users Comments</p>
-            {this.state.user.currentUser.email === this.state.tempUser.email &&
-            <Link 
-            to={`/user/${this.props.match.params.email}/update`} 
-            className="btn btn-primary">Update</Link>}
-            <Route path="/user/:email/update" component={Update} />
+        {/* <Nav userInfo={this.state.user}/> */}
+        <Card className="card medium grey lighten" style={centerAlign} header={<CardTitle src={this.state.tempUser.profilePic} alt=''></CardTitle>} 
+            actions={[<Button waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
+          <Row>
+          <Col m={7} s={12}>
+            <div className='row'>
+              <div className="col s12">
+                <h5 className="card-content">{this.state.tempUser.first_name + " " +this.state.tempUser.last_name}</h5>
+                  <p className="card-text">{this.state.tempUser.email}</p>
+              </div>
             </div>
-            
-        </div>
+            <br />
+              <Col s={6}>
+                  {/* Needs to render dynamically */}
+                    <p>DOB: 12/7/80</p>
+                    <p>Height: 5' 9"</p>
+                    <p>Hair: Brown</p>
+                </Col>
+                <Col s={6}>
+                  {/* Needs to render dynamically */}
+                    <p>AGE: 36</p>
+                    <p>Weight: 150 lbs</p>
+                    <p>Eye: Brown</p>
+                </Col> 
+                {this.state.user.currentUser.email === this.state.tempUser.email &&
+                    <Link to={`/user/${this.props.match.params.email}/update`} 
+                    className="btn btn-default">Update</Link>}
+                  <Route path="/user/:email/update" component={Update} />
+              <br />
+            </Col> 
+          </Row>
+        </Card>         
       </div>
+        <Menu handleLogout={this.props.handleLogout}/>
+    </main>
     );
   }
 }
