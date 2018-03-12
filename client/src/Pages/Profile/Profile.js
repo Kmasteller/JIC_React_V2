@@ -19,14 +19,6 @@ class Profile extends Component {
           last_name: '',
           email: '',
           profilePic: null,
-          // photo: '',
-          // birthdate: '',
-          // address: '',
-          // phone: '',
-          // height: '',
-          // weight: '',
-          // hair: '',
-          // eyes: ''
         }
       }
     }
@@ -39,6 +31,7 @@ class Profile extends Component {
       console.log(this.state)
     })
   }
+
     // componentWillMount() {
     //   this.props.checkLogin()
     // }

@@ -9,6 +9,12 @@ module.exports = {
         res.json(err);
         });
     },
+    findById: function (req, res) {
+        User
+            .findById(req.params.id)
+            .then(data => res.json(data))
+            .catch(err => res.status(422).json(err));
+    },
 
     insert: function(req, res) {
         console.log(req.body)
@@ -30,7 +36,7 @@ module.exports = {
     },
 
     update: function(req, res) {
-        User.update({
+        User.findOneAndUpdate({
         _id: req.params.id
         }).then(function(data) {
         res.json(data);
@@ -39,3 +45,7 @@ module.exports = {
         });
     }
 };
+
+
+
+
