@@ -1,5 +1,4 @@
 const User = require('../mongooseModels/user');
-const Profile = require('../mongooseModels/profile');
 
 module.exports = {
     find: function(req, res) {
@@ -9,6 +8,7 @@ module.exports = {
         res.json(err);
         });
     },
+
     findById: function (req, res) {
         User
             .findById(req.params.id)
