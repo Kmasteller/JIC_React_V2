@@ -57,43 +57,42 @@ class Profile extends Component {
     }
 
     return (
-    <main> 
+      <main>
       <div>
-        {/* <Nav userInfo={this.state.user}/> */}
-        <Card className="card medium grey lighten" style={centerAlign} header={<CardTitle src={this.state.tempUser.profilePic} alt=''></CardTitle>} 
-            actions={[<Button waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
-          <Row>
+        {/* Main Card */}
+        <Row>
           <Col m={7} s={12}>
-            <div className='row'>
-              <div className="col s12">
-                <h5 className="card-content">{this.state.tempUser.first_name + " " +this.state.tempUser.last_name}</h5>
-                  <p className="card-text">{this.state.tempUser.email}</p>
+            <Card className="card medium grey lighten-4" style={centerAlign} header={<CardTitle image= '../../../assets/images/profile/sopuse.jpg' alt=''></CardTitle>} 
+            actions={[<Button waves='light' className='red' node='a' href='profile'>Full Profile</Button>]}>
+              <div>
+                <div className="row">
+                  <div className="col s12 h4 h6">
+                    {/* Needs to render dynamically */}
+                    <h4 class="h4"><strong>Sally Bananas</strong></h4>
+                    <h6 class="h6">"You"</h6>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col s6">
+                    {/* Needs to render dynamically */}
+                      <p>DOB: 12/7/80</p>
+                      <p>Height: 5' 9"</p>
+                      <p>Hair: Brown</p>
+                  </div>
+                  <div className="col s6">
+                    {/* Needs to render dynamically */}
+                      <p>AGE: 36</p>
+                      <p>Weight: 150 lbs</p>
+                      <p>Eye: Brown</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <br />
-              <Col s={6}>
-                  {/* Needs to render dynamically */}
-                    <p>DOB: 12/7/80</p>
-                    <p>Height: 5' 9"</p>
-                    <p>Hair: Brown</p>
-                </Col>
-                <Col s={6}>
-                  {/* Needs to render dynamically */}
-                    <p>AGE: 36</p>
-                    <p>Weight: 150 lbs</p>
-                    <p>Eye: Brown</p>
-                </Col> 
-                {this.state.user.currentUser.email === this.state.tempUser.email &&
-                    <Link to={`/user/${this.props.match.params.email}/update`} 
-                    className="btn btn-default">Update</Link>}
-                  <Route path="/user/:email/update" component={Update} />
-              <br />
-            </Col> 
-          </Row>
-        </Card>         
-      </div>
-        <Menu handleLogout={this.props.handleLogout}/>
-    </main>
+            </Card>
+          </Col>
+        </Row>
+      <Menu handleLogout={this.props.handleLogout}/>
+    </div>
+  </main>
     );
   }
 }
