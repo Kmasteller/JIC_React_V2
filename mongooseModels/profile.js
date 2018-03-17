@@ -7,12 +7,6 @@ var Schema = mongoose.Schema;
 // Create the noteSchema with the schema object
 var addSchema = new Schema({
 
-  // date is just a string
-  // username: {
-  //   type: String,
-  //   required: true,
-  //   unique: true
-  // },
   first_name: {
     type: String,
     required: true
@@ -21,22 +15,6 @@ var addSchema = new Schema({
     type: String,
     required: true
   },
-  // email: {
-  //   type: String,
-  //   required: true
-  // },
-  // password: {
-  //   type: String,
-  //   required: true
-  // },
-  // profilePic: {
-  //   type: String,
-  //   required: false
-  // },
-  // isAdmin: {
-  //   type: Boolean,
-  //   default: false
-  // },
   photo: {
     type: String,
     required: false

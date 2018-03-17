@@ -1,4 +1,3 @@
-
 // Require mongoose
 var mongoose = require("mongoose");
 // Create the schema class using mongoose's schema method

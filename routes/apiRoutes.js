@@ -1,11 +1,16 @@
-var mongoose = require("mongoose");
+const axios = require("axios");
+const mongoose = require("mongoose");
+const profileController = require("../controllers/profileController");
+const userController = require("../controllers/userController");
+const path = ("path");
 
-var User = require('../mongooseModels/user.js')
+const User = require('../mongooseModels/user.js');
+
 //bringing in the bcrypt npm module
 var bcrypt = require('bcrypt');
+
 module.exports = function (app) {
   console.log("😀  Hit /apiRoutes");
-  //grabbing our sequelize models
   // console.log(db, "this is db")
 
   //login endpoint
@@ -213,5 +218,17 @@ module.exports = function (app) {
     } else {
       res.status(404).json("please log in to update profile")
     }
+
   });
+
+  app.get("/api/saved", profileController.find);
+
+  app.post("/api/saved", profileController.insert);
+
+  app.delete("/api/saved/:id", profileController.delete);
+
+  app.get("/*", function(req, res) {
+      res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+
 }

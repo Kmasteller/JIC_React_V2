@@ -1,6 +1,4 @@
 const Profile = require('../mongooseModels/profile');
-const User = require('../mongooseModels/user');
-
 
 module.exports = {
     find: function(req, res) {
